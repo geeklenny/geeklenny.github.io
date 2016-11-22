@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://lennybai.cn/2016/11/14/%E4%BA%86%E8%A7%A3c-11/</loc>
-    <lastmod>2016-11-18T04:29:07.296Z</lastmod>
+    <lastmod>2016-11-22T09:41:36.507Z</lastmod>
     <data>
         <display>
         <title>了解c++11</title>
@@ -22,6 +22,54 @@
           
              
               <breadCrumb title="c++11" url="http://lennybai.cn/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/c-11/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lennybai.cn/2016/11/22/linux-%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-11-22T08:40:47.961Z</lastmod>
+    <data>
+        <display>
+        <title>linux 小技巧</title>
+        <pubTime>2016-11-22T01:27:34.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>系统相关</tag>
+         
+         
+           
+             
+              <breadCrumb title="操作系统" url="http://lennybai.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+          
+             
+              <breadCrumb title="使用技巧" url="http://lennybai.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</loc>
+    <lastmod>2016-11-22T02:56:54.492Z</lastmod>
+    <data>
+        <display>
+        <title>mysql 5.1 参考</title>
+        <pubTime>2016-11-22T01:27:34.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://lennybai.cn/categories/mysql/"/>
+          
+             
+              <breadCrumb title="官方文档" url="http://lennybai.cn/categories/mysql/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/"/>
           
         </display>
     </data>
