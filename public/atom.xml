@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-11-22T02:56:54.492Z</updated>
+  <updated>2016-11-22T09:51:22.241Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/"/>
     <id>http://lennybai.cn/2016/11/22/mysql-5-1-参考/</id>
     <published>2016-11-22T01:27:34.000Z</published>
-    <updated>2016-11-22T02:56:54.492Z</updated>
+    <updated>2016-11-22T09:51:22.241Z</updated>
     
     <content type="html"><![CDATA[<p>安抚</p>
 ]]></content>
@@ -46,7 +46,7 @@
     <link href="http://lennybai.cn/2016/11/22/linux-%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <id>http://lennybai.cn/2016/11/22/linux-小技巧/</id>
     <published>2016-11-22T01:27:34.000Z</published>
-    <updated>2016-11-22T08:40:47.961Z</updated>
+    <updated>2016-11-22T09:51:22.241Z</updated>
     
     <content type="html"><![CDATA[<p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
 <p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
@@ -76,7 +76,7 @@
     <link href="http://lennybai.cn/2016/11/14/%E4%BA%86%E8%A7%A3c-11/"/>
     <id>http://lennybai.cn/2016/11/14/了解c-11/</id>
     <published>2016-11-14T06:48:10.000Z</published>
-    <updated>2016-11-22T09:41:36.507Z</updated>
+    <updated>2016-11-22T09:51:22.241Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>　　起草本文的目的主要有两点：第一点，在c++11学习的过程中做一些摘要总结，尽量取其精华，为自己梳理出来一个比较清晰的记忆脉络；第二点，不得不说的就是随着年纪的增长，记忆力也开始变得并不那么可靠，做些记录，定期回头看看总是好的。<br>　　文章会对c++11（其实是c++1x更准确些）的背景进行简要的概述，并尽量详细且准确的阐述c++11的新的特性。共同学习，不断进步。</p>
 <h2 id="1-1-c-11概述"><a href="#1-1-c-11概述" class="headerlink" title="1.1 c++11概述"></a>1.1 c++11概述</h2><p>　　我们生活中常常谈论的c++更多的是指传统c++，又或是可以称为c++98的版本。c++11也并不是什么神秘的新语言，而是基于传统c++发布13年后的第一次重大修订。它主要基于现在软件行业发展的新需求与新诉求进行的一种调整——增加新特性并弃用部分特性。</p>
