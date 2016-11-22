@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[linux 小技巧]]></title>
+      <url>http://lennybai.cn/2016/11/22/linux-%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<p>阿斯蒂芬</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[了解c++11]]></title>
       <url>http://lennybai.cn/2016/11/14/%E4%BA%86%E8%A7%A3c-11/</url>
       <content type="html"><![CDATA[<h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>　　起草本文的目的主要有两点：第一点，在c++11学习的过程中做一些摘要总结，尽量取其精华，为自己梳理出来一个比较清晰的记忆脉络；第二点，不得不说的就是随着年纪的增长，记忆力也开始变得并不那么可靠，做些记录，定期回头看看总是好的。<br>　　文章会对c++11（其实是c++1x更准确些）的背景进行简要的概述，并尽量详细且准确的阐述c++11的新的特性。共同学习，不断进步。</p>

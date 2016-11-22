@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-11-18T04:29:07.296Z</updated>
+  <updated>2016-11-22T02:53:16.704Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux 小技巧</title>
+    <link href="http://lennybai.cn/2016/11/22/linux-%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>http://lennybai.cn/2016/11/22/linux-小技巧/</id>
+    <published>2016-11-22T01:27:34.000Z</published>
+    <updated>2016-11-22T02:53:16.704Z</updated>
+    
+    <content type="html"><![CDATA[<p>阿斯蒂芬</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;阿斯蒂芬&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://lennybai.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="使用技巧" scheme="http://lennybai.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="linux" scheme="http://lennybai.cn/tags/linux/"/>
+    
+      <category term="系统相关" scheme="http://lennybai.cn/tags/%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>了解c++11</title>
