@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</loc>
+    <loc>http://lennybai.cn/2016/12/02/redis%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</loc>
     
-    <lastmod>2016-11-22T09:51:22.241Z</lastmod>
+    <lastmod>2016-12-02T06:00:46.309Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lennybai.cn/2016/11/25/g-template-class/</loc>
+    
+    <lastmod>2016-11-25T05:33:01.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lennybai.cn/2016/11/14/%E4%BA%86%E8%A7%A3c-11/</loc>
+    
+    <lastmod>2016-11-23T01:07:19.984Z</lastmod>
     
   </url>
   
@@ -16,7 +30,7 @@
   </url>
   
   <url>
-    <loc>http://lennybai.cn/2016/11/14/%E4%BA%86%E8%A7%A3c-11/</loc>
+    <loc>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</loc>
     
     <lastmod>2016-11-22T09:51:22.241Z</lastmod>
     

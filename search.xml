@@ -4,9 +4,134 @@
   
     
     <entry>
-      <title><![CDATA[mysql 5.1 参考]]></title>
-      <url>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</url>
-      <content type="html"><![CDATA[<p>安抚</p>
+      <title><![CDATA[redis学习之参考文档]]></title>
+      <url>http://lennybai.cn/2016/12/02/redis%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</url>
+      <content type="html"><![CDATA[<h1 id="1-认识redis"><a href="#1-认识redis" class="headerlink" title="1. 认识redis"></a>1. 认识redis</h1><p>　　redis是一个key-value的存储系统。它支持网络、可基于内存亦可持久化的日志型、key-value数据库。value值可支持string,map,list,sets和sorted sets等类型。<br>　　详细的说，redis相对其它key-value缓存产品(如memcached)有三个特点：</p>
+<ul>
+<li>支持持久化，可将内存中的数据保持到磁盘中，重启时可再次加载进行使用。</li>
+<li>不仅仅支持简单的key-value类型的数据，同事还提供list,set,zset,hash等数据结构的存储</li>
+<li>支持数据备份,master-slave模式</li>
+</ul>
+<p>  除此之外，redis还具备一下特点:</p>
+<ul>
+<li>极高的性能：　读110000次/s，　写的速度81000次/s</li>
+<li>丰富的数据类型</li>
+<li>原子性：所有操作都是原子性的。</li>
+<li>丰富的特性: 支持通知、key过期，publish/subscribe等</li>
+</ul>
+<h1 id="2-使用redis"><a href="#2-使用redis" class="headerlink" title="2.使用redis"></a>2.使用redis</h1><p>　　对于一个工具，我们更关心的是如何使用。这里我从官方的文档中摘录出一些我自己比较感性去的部分罗列与此。和大家分享。</p>
+<h2 id="2-1-配置Redis"><a href="#2-1-配置Redis" class="headerlink" title="2.1　配置Redis"></a>2.1　配置Redis</h2><p>　　如何正确的使用配置文件，有利于我们更好的使用redis。这里我们认识一下常用命令。我安装了redis-cli，这里直接使用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">lennybai@lennybai:~$ redis-cli</div><div class="line">127.0.0.1:6379&gt; CONFIG GET loglevel</div><div class="line">1) <span class="string">"loglevel"</span></div><div class="line">2) <span class="string">"notice"</span></div><div class="line">127.0.0.1:6379&gt; config get *</div><div class="line">  1) <span class="string">"dbfilename"</span></div><div class="line">  2) <span class="string">"dump.rdb"</span></div><div class="line">  3) <span class="string">"requirepass"</span></div><div class="line">  4) <span class="string">""</span></div><div class="line">  5) <span class="string">"masterauth"</span></div><div class="line">  6) <span class="string">""</span></div><div class="line">  7) <span class="string">"unixsocket"</span></div><div class="line">  8) <span class="string">""</span></div><div class="line">  9) <span class="string">"logfile"</span></div><div class="line"> 10) <span class="string">"/var/log/redis/redis-server.log"</span></div><div class="line"> 11) <span class="string">"pidfile"</span></div><div class="line">..........后面省略</div></pre></td></tr></table></figure></p>
+<p>　　我们可以通过config　get key获取配置文件中某项配置的值。并可以通过config set config_string_name new_config_value来更新其值。<br>　　下面对一些常用的配置项进行说明：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>　说明  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>daemonize</td>
+<td>是否设为守护进程</td>
+</tr>
+<tr>
+<td>pidfile</td>
+<td>设置守护进程pid存储文件的位置</td>
+</tr>
+<tr>
+<td>port</td>
+<td>指定redis端口(默认6379)</td>
+</tr>
+<tr>
+<td>databases</td>
+<td>设置redis内置数据库的数量。通过select切换</td>
+</tr>
+<tr>
+<td>save</td>
+<td>指定同步到文件的规则</td>
+</tr>
+<tr>
+<td>maxclient</td>
+<td>最大客户连接数，0为不设限制</td>
+</tr>
+<tr>
+<td>maxmemory</td>
+<td>最大分配内存</td>
+</tr>
+</tbody>
+</table>
+<p>对于命令还有很多，大家可以在需要时自行查看。</p>
+<h2 id="2-2-redis数据类型"><a href="#2-2-redis数据类型" class="headerlink" title="2.2　redis数据类型"></a>2.2　redis数据类型</h2><p>　　数据类型对于redis相对其他缓存产品而言，其丰富的数据格式是它的一大特色。这里做一下简单的介绍。</p>
+<h3 id="string字符串类型"><a href="#string字符串类型" class="headerlink" title="string字符串类型"></a>string字符串类型</h3><p>　　string类型是最基本的类型，它和memcached一样的类型.一个key对应一个value。redis中，string是二进制安全的，也就是说它可以存储任何数据(如图片或者序列化的对象)。一个键的最大存储为512MB.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; SET name <span class="string">"redis.net.cn"</span></div><div class="line">OK</div><div class="line">redis 127.0.0.1:6379&gt; GET name</div><div class="line"><span class="string">"redis.net.cn"</span></div></pre></td></tr></table></figure></p>
+<h3 id="hash（哈希"><a href="#hash（哈希" class="headerlink" title="hash（哈希)"></a>hash（哈希)</h3><p>Redis hash是一个键值组合，它是一个string类型的field和value的映射表。特别适合存储对象。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; HMSET user:1 username redis.net.cn password redis.net.cn points 200</div><div class="line">OK</div><div class="line">redis 127.0.0.1:6379&gt; HGETALL user:1</div><div class="line">1) <span class="string">"username"</span></div><div class="line">2) <span class="string">"redis.net.cn"</span></div><div class="line">3) <span class="string">"password"</span></div><div class="line">4) <span class="string">"redis.net.cn"</span></div><div class="line">5) <span class="string">"points"</span></div><div class="line">6) <span class="string">"200"</span></div></pre></td></tr></table></figure></p>
+<p>每个 hash 可以存储 232 - 1 键值对（40多亿）。</p>
+<h3 id="list-列表"><a href="#list-列表" class="headerlink" title="list(列表)"></a>list(列表)</h3><p>　　redis　list列表是简单的string类型列表。可以添加一个元素在列表的头部或者尾部。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; lpush redis.net.cn redis</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; lpush redis.net.cn mongodb</div><div class="line">(<span class="built_in">integer</span>) 2</div><div class="line">redis 127.0.0.1:6379&gt; lpush redis.net.cn rabitmq</div><div class="line">(<span class="built_in">integer</span>) 3</div><div class="line">redis 127.0.0.1:6379&gt; lrange redis.net.cn 0 10</div><div class="line">1) <span class="string">"rabitmq"</span></div><div class="line">2) <span class="string">"mongodb"</span></div><div class="line">3) <span class="string">"redis"</span></div><div class="line">redis 127.0.0.1:6379&gt;</div></pre></td></tr></table></figure></p>
+<p>列表最多可存储 232 - 1 元素 (4294967295, 每个列表可存储40多亿)。</p>
+<h3 id="set-集合"><a href="#set-集合" class="headerlink" title="set(集合)"></a>set(集合)</h3><p>　　Redis的set是string类型的无序集合。它是通过hash表实现的。增添和查找的复杂度为O(1).</p>
+<blockquote>
+<p>sadd key member</p>
+</blockquote>
+<p>实例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; sadd redis.net.cn redis</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; sadd redis.net.cn mongodb</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; sadd redis.net.cn rabitmq</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; sadd redis.net.cn rabitmq</div><div class="line">(<span class="built_in">integer</span>) 0</div><div class="line">redis 127.0.0.1:6379&gt; smembers redis.net.cn</div><div class="line"></div><div class="line">1) <span class="string">"rabitmq"</span></div><div class="line">2) <span class="string">"mongodb"</span></div><div class="line">3) <span class="string">"redis"</span></div></pre></td></tr></table></figure>
+<h3 id="zset（有序集合"><a href="#zset（有序集合" class="headerlink" title="zset（有序集合)"></a>zset（有序集合)</h3><p>　　zset是一个有序的string集合，且不允许成员重复。每个成员会关联一个double类型的分数。通过分数进行排序。成员唯一，但是分数可以重复。</p>
+<blockquote>
+<p>zadd key score member</p>
+</blockquote>
+<p>实例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 redis</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 mongodb</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 rabitmq</div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line">redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 rabitmq</div><div class="line">(<span class="built_in">integer</span>) 0</div><div class="line">redis 127.0.0.1:6379&gt; ZRANGEBYSCORE redis.net.cn 0 1000</div><div class="line"></div><div class="line">1) <span class="string">"redis"</span></div><div class="line">2) <span class="string">"mongodb"</span></div><div class="line">3) <span class="string">"rabitmq"</span></div></pre></td></tr></table></figure>
+<h2 id="2-3-Redis命令"><a href="#2-3-Redis命令" class="headerlink" title="2.3 Redis命令"></a>2.3 Redis命令</h2><p>  通过介绍redis的命令，了解redis的使用</p>
+<h3 id="PING"><a href="#PING" class="headerlink" title="PING"></a>PING</h3><p>　　redis可以通过ping命令检测redis的运行情况。若正常运行，则返回pung<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; PING</div><div class="line"></div><div class="line">PONG</div></pre></td></tr></table></figure></p>
+<h3 id="key相关命令"><a href="#key相关命令" class="headerlink" title="key相关命令"></a>key相关命令</h3><table>
+<thead>
+<tr>
+<th>命令　</th>
+<th>　说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set key</td>
+<td>插入一个key-value</td>
+</tr>
+<tr>
+<td>del key</td>
+<td>删除一个key-value.正确返回１，错误返回０</td>
+</tr>
+<tr>
+<td>dump key</td>
+<td>序列化key。正确返回序列化后字符串，错误返回nil</td>
+</tr>
+</tbody>
+</table>
+<p>exists key ｜　检测键值是否存在<br>expire key seconds | 设置键值过期时间，时间到了自动删除<br>move key db ｜　将当前数据库的key移动到其他数据库<br>persist key | 移除过期时间，永久保存<br>rename key new key | 重命名key<br>type key | 返回key的类型</p>
+<h3 id="publish-subscribe命令"><a href="#publish-subscribe命令" class="headerlink" title="publish\subscribe命令"></a>publish\subscribe命令</h3><p>　　pub\sub是一个消息通信模式。通过subscribe订阅消息，然后通过publish发送消息。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#订阅者</span></div><div class="line">redis 127.0.0.1:6379&gt; SUBSCRIBE redisChat</div><div class="line"></div><div class="line">Reading messages... (press Ctrl-C to quit)</div><div class="line">1) <span class="string">"subscribe"</span></div><div class="line">2) <span class="string">"redisChat"</span></div><div class="line">3) (<span class="built_in">integer</span>) 1</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#发送者</span></div><div class="line">redis 127.0.0.1:6379&gt; PUBLISH redisChat <span class="string">"Redis is a great caching technique"</span></div><div class="line"></div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line"></div><div class="line">redis 127.0.0.1:6379&gt; PUBLISH redisChat <span class="string">"Learn redis by w3cschool.cc"</span></div><div class="line"></div><div class="line">(<span class="built_in">integer</span>) 1</div><div class="line"></div><div class="line"><span class="comment"># 订阅者的客户端会显示如下消息</span></div><div class="line">1) <span class="string">"message"</span></div><div class="line">2) <span class="string">"redisChat"</span></div><div class="line">3) <span class="string">"Redis is a great caching technique"</span></div><div class="line">1) <span class="string">"message"</span></div><div class="line">2) <span class="string">"redisChat"</span></div><div class="line">3) <span class="string">"Learn redis by w3cschool.cc"</span></div></pre></td></tr></table></figure>
+<p>　　通过unsubscribe退订频道。</p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>　　Redis 事务可以一次执行多个命令， 并且带有以下两个重要的保证：</p>
+<ul>
+<li>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</li>
+<li>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</li>
+</ul>
+<p>一个事务从开始到执行会经历以下三个阶段：</p>
+<ul>
+<li>开始事务。</li>
+<li>命令入队。</li>
+<li>执行事务。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; MULTI</div><div class="line">OK</div><div class="line"></div><div class="line">redis 127.0.0.1:6379&gt; SET book-name <span class="string">"Mastering C++ in 21 days"</span></div><div class="line">QUEUED</div><div class="line"></div><div class="line">redis 127.0.0.1:6379&gt; GET book-name</div><div class="line">QUEUED</div><div class="line"></div><div class="line">redis 127.0.0.1:6379&gt; SADD tag <span class="string">"C++"</span> <span class="string">"Programming"</span> <span class="string">"Mastering Series"</span></div><div class="line">QUEUED</div><div class="line"></div><div class="line">redis 127.0.0.1:6379&gt; SMEMBERS tag</div><div class="line">QUEUED</div><div class="line"></div><div class="line">redis 127.0.0.1:6379&gt; EXEC</div><div class="line">1) OK</div><div class="line">2) <span class="string">"Mastering C++ in 21 days"</span></div><div class="line">3) (<span class="built_in">integer</span>) 3</div><div class="line">4) 1) <span class="string">"Mastering Series"</span></div><div class="line">   2) <span class="string">"C++"</span></div><div class="line">   3) <span class="string">"Programming"</span></div></pre></td></tr></table></figure>
+<p>  discard取消事务执行。</p>
+<h3 id="INFO"><a href="#INFO" class="headerlink" title="INFO　"></a>INFO　</h3><p>查看当前redis所有信息</p>
+<h3 id="脚本支持"><a href="#脚本支持" class="headerlink" title="脚本支持"></a>脚本支持</h3><p>　 redis内置lua解析器</p>
+<h1 id="3-参考文献"><a href="#3-参考文献" class="headerlink" title="3 参考文献"></a>3 参考文献</h1><ul>
+<li>[1]: <a href="http://www.redis.net.cn/tutorial/3501.html" target="_blank" rel="external">redis官方文档</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[g++ template class]]></title>
+      <url>http://lennybai.cn/2016/11/25/g-template-class/</url>
+      <content type="html"><![CDATA[<p>g++模板类，定义不能与声明分离</p>
 ]]></content>
     </entry>
     
@@ -16,6 +141,13 @@
       <content type="html"><![CDATA[<p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
 <p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
 <p>　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name mysql 2&gt;/dev/null</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql 5.1 参考]]></title>
+      <url>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</url>
+      <content type="html"><![CDATA[<p>安抚</p>
 ]]></content>
     </entry>
     
@@ -96,15 +228,21 @@
 </ol>
 <h3 id="2-2-4-range-based-for-loop"><a href="#2-2-4-range-based-for-loop" class="headerlink" title="2.2.4 range-based for loop"></a>2.2.4 range-based for loop</h3><p>　　在cppreference中，这个特性被描述为：</p>
 <blockquote>
-<p>Executes a for loop over a range.Used as a more readable equivalent to the traditional for loop operating over a range of values, such as all elements in a container.　　<br>　　这个描述有些官方和笼统。其实，range-based for loop在c++11中加入，它使得c++开始支持类似于’foreach’的范式格式。这种新格式使得我们获取或者操作数组时变得更容易，前提是我们不去关心索引，迭代器和数量的前提下。range-based　for loop可以支持迭代所有的c类型数组，初始化列表和重载了begin()和end()函数的容器。</p>
+<p>Executes a for loop over a range.Used as a more readable equivalent to the traditional for loop operating over a range of values, such as all elements in a container.　</p>
 </blockquote>
+<p>　<br>　　这个描述有些官方和笼统。其实，range-based for loop在c++11中加入，它使得c++开始支持类似于’foreach’的范式格式。这种新格式使得我们获取或者操作数组时变得更容易，前提是我们不去关心索引，迭代器和数量的前提下。range-based　for loop可以支持迭代所有的c类型数组，初始化列表和重载了begin()和end()函数的容器。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; m;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line">    v.push_back(<span class="number">1</span>);</div><div class="line">    v.push_back(<span class="number">2</span>);</div><div class="line">    v.push_back(<span class="number">3</span>);</div><div class="line">    m[<span class="string">"my_vector"</span>] = v;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; tempM : m)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; tempM.first &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; tempV : tempM.second)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; tempV &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span>&amp; e : arr)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; e &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        e = e*e;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span>&amp; e : arr)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; e &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="2-2-5-快速初始化列表"><a href="#2-2-5-快速初始化列表" class="headerlink" title="2.2.5 快速初始化列表"></a>2.2.5 快速初始化列表</h3><p>　　在c++11中，它提供了更便捷，或者说是更人性化的初始化方式。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//c++ 98 error: in C++98 ‘m’ must be initialized by constructor, not by ‘&#123;...&#125;’</span></div><div class="line"><span class="comment">//c++ 11</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; v[<span class="number">3</span>] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line"><span class="comment">//c++98 error: could not convert ‘&#123;&#123;1, 2&#125;&#125;’ from ‘&lt;brace-enclosed initializer list&gt;’ to ‘std::map&lt;int, int&gt;’</span></div><div class="line"><span class="comment">//c++11 ok</span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;&#125;;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; m[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
 <p>  对于对象的内部属性初始化，我们可以通过调用参数为initializer_list的方法快速初始化。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> myclass &#123;</div><div class="line">  myclass (<span class="keyword">int</span>,<span class="keyword">int</span>);</div><div class="line">  myclass (<span class="built_in">initializer_list</span>&lt;<span class="keyword">int</span>&gt;);</div><div class="line">  <span class="comment">/* definitions ... */</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">myclass foo &#123;<span class="number">10</span>,<span class="number">20</span>&#125;;  <span class="comment">// calls initializer_list ctor</span></div><div class="line"><span class="function">myclass <span class="title">bar</span> <span class="params">(<span class="number">10</span>,<span class="number">20</span>)</span></span>;  <span class="comment">// calls first constructor</span></div></pre></td></tr></table></figure></p>
 <h3 id="2-2-6-类型别名"><a href="#2-2-6-类型别名" class="headerlink" title="2.2.6 类型别名"></a>2.2.6 类型别名</h3><p>　　传统c++同常使用typedef为类型定义一个新的名称。给函数声明去做个别名是比较常见的使用方式。</p>
 <blockquote>
-<p>typedef void (<em>SigHandler)(int);<br>　　这个是unix中信号处理的圆形函数。它讲一个参数为int并返回值为void的函数原型重命名为SigHandler.这个原型相对还比较容易理解。但在我们平时的编程过程中，遇到的情况往往比这要复杂得多。c++11为我们提供了一个更符合人类思维和更直观的表述方式(这话是我自己说的，不要追究责任２３３３３３)。<br>using SigHandler = void(</em>)(int);<br>　　这里就提高了using关键字。在传统c++中，对于using 我们可能唯一的用法就是using namespace。而在c++11中，它获得了更多的功能。下面我们继续说一些其他的别名使用情况。提到类型别名，我们有的时候会想到，能不能讲某些又臭又长的模板类型给做个别名。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> Y, <span class="keyword">typename</span> Z&gt;</div><div class="line"><span class="keyword">class</span> MyTest</div><div class="line">&#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    MyTest();</div><div class="line">    <span class="keyword">virtual</span> ~MyTest();</div><div class="line">  <span class="keyword">private</span>:</div><div class="line">    X x;</div><div class="line">    Y y;</div><div class="line">    Z z;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div><div class="line"><span class="keyword">typedef</span> MyTest&lt;<span class="keyword">int</span>,U,<span class="keyword">int</span>&gt; mm; <span class="comment">//error: template declaration of ‘typedef’</span></div></pre></td></tr></table></figure></p>
+<p>typedef void (*SigHandler)(int);</p>
 </blockquote>
+<p>　　这个是unix中信号处理的圆形函数。它讲一个参数为int并返回值为void的函数原型重命名为SigHandler.这个原型相对还比较容易理解。但在我们平时的编程过程中，遇到的情况往往比这要复杂得多。c++11为我们提供了一个更符合人类思维和更直观的表述方式(这话是我自己说的，不要追究责任２３３３３３)。</p>
+<blockquote>
+<p>using SigHandler = void(*)(int);</p>
+</blockquote>
+<p>　　这里就提高了using关键字。在传统c++中，对于using 我们可能唯一的用法就是using namespace。而在c++11中，它获得了更多的功能。下面我们继续说一些其他的别名使用情况。提到类型别名，我们有的时候会想到，能不能讲某些又臭又长的模板类型给做个别名。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> Y, <span class="keyword">typename</span> Z&gt;</div><div class="line"><span class="keyword">class</span> MyTest</div><div class="line">&#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    MyTest();</div><div class="line">    <span class="keyword">virtual</span> ~MyTest();</div><div class="line">  <span class="keyword">private</span>:</div><div class="line">    X x;</div><div class="line">    Y y;</div><div class="line">    Z z;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div><div class="line"><span class="keyword">typedef</span> MyTest&lt;<span class="keyword">int</span>,U,<span class="keyword">int</span>&gt; mm; <span class="comment">//error: template declaration of ‘typedef’</span></div></pre></td></tr></table></figure></p>
 <p>  在传统c++中，它并不支持对上述初始化部分类型的模板类进行再次重命名。而c++11中可以通过using关键字得到实现。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div><div class="line"><span class="keyword">using</span> mm = MyTest&lt;<span class="keyword">int</span>,U,<span class="keyword">int</span>&gt;;</div></pre></td></tr></table></figure></p>
 <hr>
 <h1 id="3-参考文献"><a href="#3-参考文献" class="headerlink" title="3 参考文献"></a>3 参考文献</h1><ul>
