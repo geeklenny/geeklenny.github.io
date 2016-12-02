@@ -16,6 +16,7 @@ categories:
 * 不仅仅支持简单的key-value类型的数据，同事还提供list,set,zset,hash等数据结构的存储
 * 支持数据备份,master-slave模式
 
+<!--more-->
 
   除此之外，redis还具备一下特点:
 * 极高的性能：　读110000次/s，　写的速度81000次/s
