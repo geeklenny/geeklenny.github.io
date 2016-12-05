@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-12-02T06:09:24.103Z</updated>
+  <updated>2016-12-05T07:09:16.848Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网站浏览记录</title>
+    <link href="http://lennybai.cn/2016/12/05/%E7%BD%91%E7%AB%99%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/"/>
+    <id>http://lennybai.cn/2016/12/05/网站浏览记录/</id>
+    <published>2016-12-05T07:04:18.000Z</published>
+    <updated>2016-12-05T07:09:16.848Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　我习惯每天花上一段时间，去根据今天的疑问去搜索一些博客去读一读。经常会看到一些让人为之振奋的讲解，但也因为读的多读的泛，让自己很难记起某些知识点的具体为止。让自己想再次翻阅的时候很是焦灼。现在想想何不记录一番，方便以后查阅呢？</p>
+<h3 id="大型网站架构"><a href="#大型网站架构" class="headerlink" title="大型网站架构"></a>大型网站架构</h3><ol>
+<li><a href="http://www.cnblogs.com/elves/p/4259188.html" target="_blank" rel="external">大型网站改进历程</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　我习惯每天花上一段时间，去根据今天的疑问去搜索一些博客去读一读。经常会看到一些让人为之振奋的讲解，但也因为读的多读的泛，让自己很难记起某些知识点的具体为止。让自己想再次翻阅的时候很是焦灼。现在想想何不记录一番，方便以后查阅呢？&lt;/p&gt;
+&lt;h3 id=&quot;大型网站架构&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="网站地址" scheme="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%AB%99%E5%9C%B0%E5%9D%80/"/>
+    
+    
+      <category term="网址推荐" scheme="http://lennybai.cn/tags/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90/"/>
+    
+      <category term="学习笔记" scheme="http://lennybai.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective c++小记</title>
+    <link href="http://lennybai.cn/2016/12/02/effective-c-%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://lennybai.cn/2016/12/02/effective-c-小记/</id>
+    <published>2016-12-02T08:51:35.000Z</published>
+    <updated>2016-12-02T08:51:35.373Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>算法导论</title>
+    <link href="http://lennybai.cn/2016/12/02/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+    <id>http://lennybai.cn/2016/12/02/算法导论/</id>
+    <published>2016-12-02T08:51:00.000Z</published>
+    <updated>2016-12-02T08:51:00.502Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>elasticsearch上手练</title>
+    <link href="http://lennybai.cn/2016/12/02/elasticsearch%E4%B8%8A%E6%89%8B%E7%BB%83/"/>
+    <id>http://lennybai.cn/2016/12/02/elasticsearch上手练/</id>
+    <published>2016-12-02T08:50:07.000Z</published>
+    <updated>2016-12-02T08:50:07.411Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>c++线程池</title>
+    <link href="http://lennybai.cn/2016/12/02/c-%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>http://lennybai.cn/2016/12/02/c-线程池/</id>
+    <published>2016-12-02T08:48:44.000Z</published>
+    <updated>2016-12-02T08:48:44.182Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>redis学习之参考文档</title>
