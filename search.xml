@@ -4,12 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[编程珠玑]]></title>
+      <url>http://lennybai.cn/2016/12/06/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/</url>
+      <content type="html"><![CDATA[<p>编程珠玑</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[网站浏览记录]]></title>
       <url>http://lennybai.cn/2016/12/05/%E7%BD%91%E7%AB%99%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>　　我习惯每天花上一些时间，根据今天的疑问去搜索一些博客读一读。经常会看到一些让人为之振奋的讲解，但也因为读的多读的泛，让自己很难记起某些知识点的具体位置。这让自己想再次翻阅的时候很是焦灼。现在想想何不记录一番，方便以后查阅呢？</p>
 <a id="more"></a>
 <h3 id="大型网站架构"><a href="#大型网站架构" class="headerlink" title="大型网站架构"></a>大型网站架构</h3><ol>
 <li><a href="http://www.cnblogs.com/elves/p/4259188.html" target="_blank" rel="external">大型网站改进历程</a></li>
+<li><a href="http://www.cnblogs.com/itfly8/p/5006197.html" target="_blank" rel="external">大型网站架构案例</a></li>
+</ol>
+<h3 id="数据库缓存"><a href="#数据库缓存" class="headerlink" title="数据库缓存"></a>数据库缓存</h3><ol>
+<li><a href="http://www.360sdn.com/architect/2015/0504/8691.html" target="_blank" rel="external">mysql+memcached</a></li>
+<li><a href="http://www.voidcn.com/blog/bantiaomichong/article/p-6158870.html" target="_blank" rel="external">mysql+redis</a></li>
 </ol>
 ]]></content>
     </entry>
@@ -17,19 +29,22 @@
     <entry>
       <title><![CDATA[effective c++小记]]></title>
       <url>http://lennybai.cn/2016/12/02/effective-c-%E5%B0%8F%E8%AE%B0/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>more effective c++</p>
+]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[算法导论]]></title>
       <url>http://lennybai.cn/2016/12/02/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>算法导论</p>
+]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[elasticsearch上手练]]></title>
       <url>http://lennybai.cn/2016/12/02/elasticsearch%E4%B8%8A%E6%89%8B%E7%BB%83/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>elasticsearch</p>
+]]></content>
     </entry>
     
     <entry>
@@ -183,7 +198,7 @@
     <entry>
       <title><![CDATA[mysql 5.1 参考]]></title>
       <url>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</url>
-      <content type="html"><![CDATA[<p>安抚</p>
+      <content type="html"><![CDATA[<p>mysql </p>
 ]]></content>
     </entry>
     
