@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[编程珠玑]]></title>
       <url>http://lennybai.cn/2016/12/06/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/</url>
-      <content type="html"><![CDATA[<p>编程珠玑</p>
+      <content type="html"><![CDATA[<p>编程珠玑，悟性太低，择日再来一遍。</p>
 ]]></content>
     </entry>
     
@@ -23,6 +23,7 @@
 <li><a href="http://www.360sdn.com/architect/2015/0504/8691.html" target="_blank" rel="external">mysql+memcached</a></li>
 <li><a href="http://www.voidcn.com/blog/bantiaomichong/article/p-6158870.html" target="_blank" rel="external">mysql+redis</a></li>
 </ol>
+<p>###　编程珠玑<br><a href="http://www.hawstein.com/posts/make-thiner-programming-pearls.html" target="_blank" rel="external">把编程珠玑读薄</a><br><a href="http://mingyangshang.github.io/2016/01/01/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/" target="_blank" rel="external">编程珠玑</a></p>
 ]]></content>
     </entry>
     
@@ -192,13 +193,6 @@
       <content type="html"><![CDATA[<p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
 <p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
 <p>　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name mysql 2&gt;/dev/null</div></pre></td></tr></table></figure></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[mysql 5.1 参考]]></title>
-      <url>http://lennybai.cn/2016/11/22/mysql-5-1-%E5%8F%82%E8%80%83/</url>
-      <content type="html"><![CDATA[<p>mysql </p>
 ]]></content>
     </entry>
     
