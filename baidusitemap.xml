@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://lennybai.cn/2016/12/02/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA1/</loc>
+    <lastmod>2016-12-09T03:11:06.459Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论(1)——写好伪代码</title>
+        <pubTime>2016-12-02T08:51:00.000Z</pubTime>
+        
+        <tag>读书笔记</tag>
+         
+        <tag>算法导论</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="算法导论" url="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://lennybai.cn/2016/12/06/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/</loc>
     <lastmod>2016-12-08T02:16:13.648Z</lastmod>
     <data>
@@ -97,31 +122,6 @@
           
              
               <breadCrumb title="elasticsearch" url="http://lennybai.cn/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/elasticsearch/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lennybai.cn/2016/12/02/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/</loc>
-    <lastmod>2016-12-06T02:30:36.834Z</lastmod>
-    <data>
-        <display>
-        <title>算法导论</title>
-        <pubTime>2016-12-02T08:51:00.000Z</pubTime>
-        
-        <tag>读书笔记</tag>
-         
-        <tag>算法导论</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书笔记" url="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="算法导论" url="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
           
         </display>
     </data>
