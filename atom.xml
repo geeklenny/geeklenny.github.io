@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-12-09T08:26:28.500Z</updated>
+  <updated>2016-12-09T08:43:56.284Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>leetcode-twosum</title>
+    <title>leetcode-two sum</title>
     <link href="http://lennybai.cn/2016/12/09/leetcode-twosum/"/>
     <id>http://lennybai.cn/2016/12/09/leetcode-twosum/</id>
     <published>2016-12-09T07:56:03.000Z</published>
-    <updated>2016-12-09T08:26:28.500Z</updated>
+    <updated>2016-12-09T08:43:56.284Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="leetcode-twoSum"><a href="#leetcode-twoSum" class="headerlink" title="leetcode twoSum"></a>leetcode twoSum</h1><h3 id="twoSum"><a href="#twoSum" class="headerlink" title="twoSum"></a><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">twoSum</a></h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+    <content type="html"><![CDATA[<h3 id="twoSum"><a href="#twoSum" class="headerlink" title="twoSum"></a><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">twoSum</a></h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
 <p>You may assume that each input would have exactly one solution.</p>
 <a id="more"></a>
 <h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
@@ -36,7 +36,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;leetcode-twoSum&quot;&gt;&lt;a href=&quot;#leetcode-twoSum&quot; class=&quot;headerlink&quot; title=&quot;leetcode twoSum&quot;&gt;&lt;/a&gt;leetcode twoSum&lt;/h1&gt;&lt;h3 id=&quot;twoSum&quot;&gt;&lt;a href=&quot;#twoSum&quot; class=&quot;headerlink&quot; title=&quot;twoSum&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot;&gt;twoSum&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
+      &lt;h3 id=&quot;twoSum&quot;&gt;&lt;a href=&quot;#twoSum&quot; class=&quot;headerlink&quot; title=&quot;twoSum&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot;&gt;twoSum&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
 &lt;p&gt;You may assume that each input would have exactly one solution.&lt;/p&gt;
     
     </summary>
