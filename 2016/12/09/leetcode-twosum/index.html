@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="读书笔记,算法导论," />
+  <meta name="keywords" content="编程,leetcode," />
 
 
 
@@ -94,16 +94,25 @@
 
 
 
-<meta name="description" content="在学习各种编程语言的时候，数据结构与算法一般都会作为重点课程来指出。而谈到算法，算法导论一书又常常被大家提起。然而作为一个编程界的老鸟，技术层面的菜鸟，最近才开始啃算法导论，实属令自己汗颜。不过拾起总比放下的要好，所以这里根据自己的理解做一些记录。并在阅读初期就设定了一些目标，包括理解并学习各种常用算法及其设计思路，学习并写好伪代码等。">
+<meta name="description" content="leetcode twoSumtwoSumGiven an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+example
+G">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法导论(1)——写好伪代码">
-<meta property="og:url" content="http://lennybai.cn/2016/12/02/算法导论1/index.html">
+<meta property="og:title" content="leetcode-twosum">
+<meta property="og:url" content="http://lennybai.cn/2016/12/09/leetcode-twosum/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="在学习各种编程语言的时候，数据结构与算法一般都会作为重点课程来指出。而谈到算法，算法导论一书又常常被大家提起。然而作为一个编程界的老鸟，技术层面的菜鸟，最近才开始啃算法导论，实属令自己汗颜。不过拾起总比放下的要好，所以这里根据自己的理解做一些记录。并在阅读初期就设定了一些目标，包括理解并学习各种常用算法及其设计思路，学习并写好伪代码等。">
-<meta property="og:updated_time" content="2016-12-09T03:11:06.459Z">
+<meta property="og:description" content="leetcode twoSumtwoSumGiven an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+example
+G">
+<meta property="og:updated_time" content="2016-12-09T08:16:26.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法导论(1)——写好伪代码">
-<meta name="twitter:description" content="在学习各种编程语言的时候，数据结构与算法一般都会作为重点课程来指出。而谈到算法，算法导论一书又常常被大家提起。然而作为一个编程界的老鸟，技术层面的菜鸟，最近才开始啃算法导论，实属令自己汗颜。不过拾起总比放下的要好，所以这里根据自己的理解做一些记录。并在阅读初期就设定了一些目标，包括理解并学习各种常用算法及其设计思路，学习并写好伪代码等。">
+<meta name="twitter:title" content="leetcode-twosum">
+<meta name="twitter:description" content="leetcode twoSumtwoSumGiven an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+example
+G">
 
 
 
@@ -124,10 +133,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/2016/12/02/算法导论1/"/>
+  <link rel="canonical" href="http://lennybai.cn/2016/12/09/leetcode-twosum/"/>
 
 
-  <title> 算法导论(1)——写好伪代码 | Lennybai' Blog </title>
+  <title> leetcode-twosum | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +310,7 @@
             
             
               
-                算法导论(1)——写好伪代码
+                leetcode-twosum
               
             
           </h1>
@@ -313,8 +322,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-02T16:51:00+08:00" content="2016-12-02">
-              2016-12-02
+            <time itemprop="dateCreated" datetime="2016-12-09T15:56:03+08:00" content="2016-12-09">
+              2016-12-09
             </time>
           </span>
 
@@ -327,8 +336,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
+                  <a href="/categories/程序设计/" itemprop="url" rel="index">
+                    <span itemprop="name">程序设计</span>
                   </a>
                 </span>
 
@@ -339,8 +348,8 @@
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/读书笔记/算法导论/" itemprop="url" rel="index">
-                    <span itemprop="name">算法导论</span>
+                  <a href="/categories/程序设计/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
                   </a>
                 </span>
 
@@ -357,7 +366,7 @@
 
           
           
-             <span id="/2016/12/02/算法导论1/" class="leancloud_visitors" data-flag-title="算法导论(1)——写好伪代码">
+             <span id="/2016/12/09/leetcode-twosum/" class="leancloud_visitors" data-flag-title="leetcode-twosum">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,21 +388,16 @@
       
 
       
-        <p>　　在学习各种编程语言的时候，数据结构与算法一般都会作为重点课程来指出。而谈到算法，算法导论一书又常常被大家提起。然而作为一个编程界的老鸟，技术层面的菜鸟，最近才开始啃算法导论，实属令自己汗颜。不过拾起总比放下的要好，所以这里根据自己的理解做一些记录。并在阅读初期就设定了一些目标，包括理解并学习各种常用算法及其设计思路，<strong><em>学习并写好伪代码</em></strong>等。</p>
-<a id="more"></a>
-<h3 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h3><p>　　书中讲到，算法就是任何良定义的计算过程。算法的目的是解决问题。问题陈述说明了期望的输入和输出，而算法则描述一个特定的计算过程来实现输入输出的关系。</p>
-<h3 id="算法的描述（伪代码）"><a href="#算法的描述（伪代码）" class="headerlink" title="算法的描述（伪代码）"></a>算法的描述（伪代码）</h3><p>　　算法可以使用英语说明，也可以用中文说明，当然也可以说明成计算机程序。它的唯一要求是这个说明必须精确的描述所需要遵循的计算过程。<br>　　我个人更欣赏将算法描述为用一种伪代码书写的程序。它的优势在于，能够使用最清晰最简洁的方法来说明给定的算法。并且根据伪代码可以将算法转化成各种所需的编程语言。</p>
-<h3 id="如何写好伪代码"><a href="#如何写好伪代码" class="headerlink" title="如何写好伪代码"></a>如何写好伪代码</h3><p>　　在我们常用的编程语言中，通常按照所需的命名规范和运算逻辑的使用，讲所想的用该语言展示出来。伪代码同样也可以按照相似的方法展示。其实伪代码并没有明确的规范要求，但是在算法导论一书中，他列出了一些所谓的约定。当然，这些约定我们可以不去遵守。但是如果按着约定去书写伪代码的话，会使我们的伪代码变得清晰易懂，何乐不为。</p>
-<ul>
-<li>缩进表示块结构。参考python的语言结构。　</li>
-<li>while,for,if-else等结构具有和c语言等相同的解释。但是方便理解，我们去除额外的细节，表示重点。比如当一个for循环时，当循环上升时使用to，下降时使用downto，步数使用by。</li>
-<li>//表示注释</li>
-<li>变量直接使用无需声明。一般变量默认为局部变量。</li>
-<li>数据访问通过数组名和下标的方式访问。</li>
-<li>使用error表示过程中出现错误。</li>
-</ul>
-<p>　　伪代码的使用方法和约定都比较宽松，目的都是能够写出清晰易懂的伪代码。</p>
-<h3 id="伪代码实践"><a href="#伪代码实践" class="headerlink" title="伪代码实践"></a>伪代码实践</h3><p>   这里列举一个插入排序的算法的伪代码实现，大家一起来感受一下气场。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">INSERT-SORT(A)</div><div class="line">    for j=2 to A.length</div><div class="line">        key=A[j]</div><div class="line">        // Insert A[j] into the sorted sequence A[1..j-1].</div><div class="line">        i = j-1;</div><div class="line">      while i&gt;0 and A[i]&gt;key</div><div class="line">          A[i+1]=A[j]</div><div class="line">          i = i-1</div><div class="line">      A[i+1]=key</div></pre></td></tr></table></figure></p>
+        <h1 id="leetcode-twoSum"><a href="#leetcode-twoSum" class="headerlink" title="leetcode twoSum"></a>leetcode twoSum</h1><h3 id="twoSum"><a href="#twoSum" class="headerlink" title="twoSum"></a><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">twoSum</a></h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution.</p>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
+<p>Given nums = [2, 7, 11, 15], target = 9,</p>
+<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　本题思路并不难。可以从第一个数开始遍历，与后面的所有剩余的数字进行加法运算，如果符合预期则返回。否则继续遍历。这里有一个很明显的问题就是增加了很多不必要的运算。算法时间复杂度较高。<br>　　一个很巧妙的算法是通过map存储已经遍历过的数字。key存储其值，value存储其索引。通过对数字从头到尾遍历。计算目标值(target-当前值)，并到map中查找，如果存在则返回，若不存在，将当前值存储到map中继续遍历。这样只需遍历一边数组就可完成整个算法。</p>
+<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; record;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</div><div class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> numberToFind = target - nums[i];</div><div class="line">            <span class="keyword">if</span>(record.find(numberToFind) != record.end())</div><div class="line">            &#123;</div><div class="line">                result.push_back(record[numberToFind]);</div><div class="line">                result.push_back(i);</div><div class="line">                <span class="keyword">return</span> result;</div><div class="line">            &#125;</div><div class="line">            record[nums[i]]=i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    Solution s;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; test = &#123;<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">15</span>&#125;;</div><div class="line">    <span class="keyword">int</span> target = <span class="number">9</span>;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i : s.twoSum(test, target))</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###　github</p>
+<p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
 
       
     </div>
@@ -447,9 +451,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+            <a href="/tags/编程/" rel="tag">#编程</a>
           
-            <a href="/tags/算法导论/" rel="tag">#算法导论</a>
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
           
         </div>
       
@@ -458,17 +462,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/02/elasticsearch上手练/" rel="next" title="elasticsearch上手练">
-                <i class="fa fa-chevron-left"></i> elasticsearch上手练
+              <a href="/2016/12/06/编程珠玑/" rel="next" title="编程珠玑">
+                <i class="fa fa-chevron-left"></i> 编程珠玑
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/02/effective-c-小记/" rel="prev" title="effective c++小记">
-                effective c++小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -622,7 +622,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是算法"><span class="nav-number">1.</span> <span class="nav-text">什么是算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的描述（伪代码）"><span class="nav-number">2.</span> <span class="nav-text">算法的描述（伪代码）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写好伪代码"><span class="nav-number">3.</span> <span class="nav-text">如何写好伪代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪代码实践"><span class="nav-number">4.</span> <span class="nav-text">伪代码实践</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode-twoSum"><span class="nav-number">1.</span> <span class="nav-text">leetcode twoSum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#twoSum"><span class="nav-number">1.0.1.</span> <span class="nav-text">twoSum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">1.0.2.</span> <span class="nav-text">example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.0.3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coding"><span class="nav-number">1.0.4.</span> <span class="nav-text">coding</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
