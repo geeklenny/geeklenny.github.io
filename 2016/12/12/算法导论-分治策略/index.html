@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,linux,hexo,socket,unp,aupe" />
+  <meta name="keywords" content="读书笔记,算法导论,分之策略,快速排序,堆排序," />
 
 
 
@@ -94,15 +94,28 @@
 
 
 
-<meta name="description" content="lennybai,个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lennybai' Blog">
-<meta property="og:url" content="http://lennybai.cn/page/2/index.html">
+<meta name="description" content="概述　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。
+简介　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:
+
+分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。
+解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论--分治策略">
+<meta property="og:url" content="http://lennybai.cn/2016/12/12/算法导论-分治策略/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="lennybai,个人博客">
+<meta property="og:description" content="概述　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。
+简介　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:
+
+分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。
+解">
+<meta property="og:updated_time" content="2016-12-12T05:55:47.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lennybai' Blog">
-<meta name="twitter:description" content="lennybai,个人博客">
+<meta name="twitter:title" content="算法导论--分治策略">
+<meta name="twitter:description" content="概述　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。
+简介　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:
+
+分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。
+解">
 
 
 
@@ -123,10 +136,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/page/2/"/>
+  <link rel="canonical" href="http://lennybai.cn/2016/12/12/算法导论-分治策略/"/>
 
 
-  <title> Lennybai' Blog </title>
+  <title> 算法导论--分治策略 | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -157,9 +170,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -280,9 +291,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -302,10 +313,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/11/22/linux-小技巧/" itemprop="url">
-                  linux 小技巧
-                </a>
+                算法导论--分治策略
               
             
           </h1>
@@ -317,8 +325,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-22T09:27:34+08:00" content="2016-11-22">
-              2016-11-22
+            <time itemprop="dateCreated" datetime="2016-12-12T10:09:14+08:00" content="2016-12-12">
+              2016-12-12
             </time>
           </span>
 
@@ -331,8 +339,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
                   </a>
                 </span>
 
@@ -343,8 +351,8 @@
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/操作系统/使用技巧/" itemprop="url" rel="index">
-                    <span itemprop="name">使用技巧</span>
+                  <a href="/categories/读书笔记/算法导论/" itemprop="url" rel="index">
+                    <span itemprop="name">算法导论</span>
                   </a>
                 </span>
 
@@ -361,7 +369,7 @@
 
           
           
-             <span id="/2016/11/22/linux-小技巧/" class="leancloud_visitors" data-flag-title="linux 小技巧">
+             <span id="/2016/12/12/算法导论-分治策略/" class="leancloud_visitors" data-flag-title="算法导论--分治策略">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,189 +391,112 @@
       
 
       
-        
-          
-            <p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
-<p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
-<p>　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name mysql 2&gt;/dev/null</div></pre></td></tr></table></figure></p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:</p>
+<ol>
+<li>分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。</li>
+<li>解决:递归的求解子问题，如果子问题的规模足够小，则停止递归，直接求解。</li>
+<li>合并:讲子问题的解组合成原问题的解。</li>
+</ol>
+<h1 id="算法举例"><a href="#算法举例" class="headerlink" title="算法举例"></a>算法举例</h1><p>　　在上一篇文章里，我们看到的归并排序其实使用的就是分治思想。这里我们再列举两个常用的，并且使用分治思想的算法:堆排序和快速排序。</p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>　　堆排序的时间复杂度为O(nlogn)，并且所需的额外存储数量固定。堆通常使用数组进行存储，它可以被看成一个近似的完全二叉树，它的每一个节点对应着数组中的一个元素。接下来我们试着去实现堆排序。<br>　　首先我们来理解一下最大堆。如果按照刚才我们所提到的，将堆看做成二叉树。那么如果是最大堆，其特点是A[PARENT(i)]&gt;=A[i]。这个公示代表着，任何一个节点不大于其父节点。这里我们用伪代码表示一下父节点和左右子节点的关系。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">PARENT(i)</div><div class="line">    return [i/2]</div><div class="line">LEFT(i)</div><div class="line">    return 2i</div><div class="line">RIGHT(i)</div><div class="line">    return 2i+1</div></pre></td></tr></table></figure></p>
+<p>　　接下来我们讨论一下堆排序算法。堆排序的一个重要环节是调节堆。详细的说，比如我们目标是构建最大堆，在Ｎ个节点的树中总会有不满足最大堆要求的父子节点关系，那么我们就要进行调整。<br>　　堆排序的第一个环节就是构建最大堆。这里我们假设某个节点的两个子节点都已经是最大树的根节点，在这种情况下，再对该节点进行调整是最容易的。所以我们构建最大堆的思路是先讲子树构建成最大堆，然后开始父节点构建。这样我们将会完成最大堆的构造。然而，这里大家一定要注意，最大堆构建完成并不代表着数组已经排序完成。比如(16,14,10,8,7,9,3)就是最大堆，但是并不是有序的。它只保证了其父节点不小于该节点。<br>　　最后我们来完成排序工作。具体的步骤就是，讲根节点与最后一个节点交换，并从树种去除，然后对树进行调整。不断的迭代这个过程，完成最终的排序工作。<br>　　这里开始为自己的表达能力感到捉急。我们还是来看伪代码吧。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//第一步，调整堆</div><div class="line">MAX-HEAPIFY(A,i)</div><div class="line">    l = LEFT(i)</div><div class="line">    r = RIGHT(i)</div><div class="line">    largest = i</div><div class="line">    if l &lt;= heapsize and A[l] &gt; A[i]</div><div class="line">        large = l</div><div class="line">    if r &lt;= heapsize and A[r] &gt; A[i]</div><div class="line">        largest = r</div><div class="line">    if largest != i</div><div class="line">        exchange(A[i],a[largest])</div><div class="line">        MAX-HEAPIFY(A,largest)</div></pre></td></tr></table></figure></p>
+<p>　　第一步，通过递归来调整以i为根节点的子树为最大堆。以此为基础，我们讲堆从子节点向上遍历，不断地调整子树为最大树来完成最大堆的构建。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第二步，构建最大堆</div><div class="line">BUILD-MAX-HEAP(A)</div><div class="line">    A.heapsize = A.length</div><div class="line">    for i = [A.length/2] downto 1</div><div class="line">        MAX-HEAPIFY(A,i)</div></pre></td></tr></table></figure></p>
+<p>　　在完成最大堆的构建之后，我们已经完成了堆排序最核心的两个步骤，那么我们现在完成堆排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//堆排序</div><div class="line">HEAP-SORT(A)</div><div class="line">    BUILD-MAX-HEAP(A)</div><div class="line">    for i = A.length downto 2</div><div class="line">        exchange A[i] with a[i]</div><div class="line">        A.heapsize = A.heapsize-1</div><div class="line">        MAX-HEAPIFY(A,1)</div></pre></td></tr></table></figure></p>
+<p>  　锵锵锵锵，堆排序完成。</p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lenny Bai WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Lenny Bai Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
       
     </div>
 
 	<div>
 	  
+	    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+
+	  
 	</div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/14/了解c-11/" itemprop="url">
-                  了解c++11
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T14:48:10+08:00" content="2016-11-14">
-              2016-11-14
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/程序设计/" itemprop="url" rel="index">
-                    <span itemprop="name">程序设计</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/程序设计/c-11/" itemprop="url" rel="index">
-                    <span itemprop="name">c++11</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
           
-
+            <a href="/tags/算法导论/" rel="tag">#算法导论</a>
           
-
+            <a href="/tags/分之策略/" rel="tag">#分之策略</a>
           
-
+            <a href="/tags/快速排序/" rel="tag">#快速排序</a>
           
-          
-             <span id="/2016/11/14/了解c-11/" class="leancloud_visitors" data-flag-title="了解c++11">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">热度 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
+            <a href="/tags/堆排序/" rel="tag">#堆排序</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>　　起草本文的目的主要有两点：第一点，在c++11学习的过程中做一些摘要总结，尽量取其精华，为自己梳理出来一个比较清晰的记忆脉络；第二点，不得不说的就是随着年纪的增长，记忆力也开始变得并不那么可靠，做些记录，定期回头看看总是好的。<br>　　文章会对c++11（其实是c++1x更准确些）的背景进行简要的概述，并尽量详细且准确的阐述c++11的新的特性。共同学习，不断进步。</p>
-<h2 id="1-1-c-11概述"><a href="#1-1-c-11概述" class="headerlink" title="1.1 c++11概述"></a>1.1 c++11概述</h2><p>　　我们生活中常常谈论的c++更多的是指传统c++，又或是可以称为c++98的版本。c++11也并不是什么神秘的新语言，而是基于传统c++发布13年后的第一次重大修订。它主要基于现在软件行业发展的新需求与新诉求进行的一种调整——增加新特性并弃用部分特性。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/14/了解c-11/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/09/leetcode-twosum/" rel="next" title="leetcode-two sum">
+                <i class="fa fa-chevron-left"></i> leetcode-two sum
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-	<div>
-	  
-	</div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -592,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -687,6 +627,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法举例"><span class="nav-number">3.</span> <span class="nav-text">算法举例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序"><span class="nav-number">3.1.</span> <span class="nav-text">堆排序</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -787,6 +738,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
