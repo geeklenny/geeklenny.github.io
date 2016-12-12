@@ -3,7 +3,7 @@ title: leetcode-two sum
 comments: false
 date: 2016-12-09 15:56:03
 tags:
-  - 编程
+  - 程序设计
   - leetcode
 categories:
   - 程序设计
