@@ -1,5 +1,5 @@
 ---
-title: leetcode-twosum
+title: leetcode-two sum
 comments: false
 date: 2016-12-09 15:56:03
 tags:
@@ -10,7 +10,6 @@ categories:
   - leetcode
 ---
 
-# leetcode twoSum
 ### [twoSum](https://leetcode.com/problems/two-sum/)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -69,6 +68,6 @@ int main(int argc, char *argv[])
 }
 ```
 
-###　github
+### github
 
 [github代码链接](https://github.com/geeklenny/leetcode)
