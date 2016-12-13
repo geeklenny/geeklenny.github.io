@@ -252,6 +252,12 @@ redis 127.0.0.1:6379> EXEC
 ### 脚本支持
 　 redis内置lua解析器
 
+## 2.4 Redis为什么不能取代关系型数据库
+1. 复杂的数据结构不好维护
+2. 存储于内存虽然访问速度较快，但是关系体现不出来。
+3. 存储成本高
+
 # 3 参考文献
 
 - [1]: [redis官方文档](http://www.redis.net.cn/tutorial/3501.html)
+- [2]: [redis为什么不能取代关系数据库](https://www.teakki.com/p/57dbd374d7d770e81877c75a)
