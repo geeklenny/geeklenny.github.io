@@ -325,8 +325,14 @@
 <p>  discard取消事务执行。</p>
 <h3 id="INFO"><a href="#INFO" class="headerlink" title="INFO　"></a>INFO　</h3><p>查看当前redis所有信息</p>
 <h3 id="脚本支持"><a href="#脚本支持" class="headerlink" title="脚本支持"></a>脚本支持</h3><p>　 redis内置lua解析器</p>
+<h2 id="2-4-Redis为什么不能取代关系型数据库"><a href="#2-4-Redis为什么不能取代关系型数据库" class="headerlink" title="2.4 Redis为什么不能取代关系型数据库"></a>2.4 Redis为什么不能取代关系型数据库</h2><ol>
+<li>复杂的数据结构不好维护</li>
+<li>存储于内存虽然访问速度较快，但是关系体现不出来。</li>
+<li>存储成本高</li>
+</ol>
 <h1 id="3-参考文献"><a href="#3-参考文献" class="headerlink" title="3 参考文献"></a>3 参考文献</h1><ul>
 <li>[1]: <a href="http://www.redis.net.cn/tutorial/3501.html" target="_blank" rel="external">redis官方文档</a></li>
+<li>[2]: <a href="https://www.teakki.com/p/57dbd374d7d770e81877c75a" target="_blank" rel="external">redis为什么不能取代关系数据库</a></li>
 </ul>
 ]]></content>
     </entry>
