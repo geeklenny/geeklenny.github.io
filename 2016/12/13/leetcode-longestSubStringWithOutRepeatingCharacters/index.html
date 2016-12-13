@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,linux,hexo,socket,unp,aupe" />
+  <meta name="keywords" content="程序设计,leetcode," />
 
 
 
@@ -94,15 +94,16 @@
 
 
 
-<meta name="description" content="lennybai,个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lennybai' Blog">
-<meta property="og:url" content="http://lennybai.cn/tags/学习笔记/index.html">
+<meta name="description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode-longestSubStringWithOutRepeatingCharacters">
+<meta property="og:url" content="http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="lennybai,个人博客">
+<meta property="og:description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
+<meta property="og:updated_time" content="2016-12-13T07:43:40.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lennybai' Blog">
-<meta name="twitter:description" content="lennybai,个人博客">
+<meta name="twitter:title" content="leetcode-longestSubStringWithOutRepeatingCharacters">
+<meta name="twitter:description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
 
 
 
@@ -123,10 +124,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/tags/学习笔记/"/>
+  <link rel="canonical" href="http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/"/>
 
 
-  <title> 标签: 学习笔记 | Lennybai' Blog </title>
+  <title> leetcode-longestSubStringWithOutRepeatingCharacters | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -279,46 +280,207 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        学习笔记
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                leetcode-longestSubStringWithOutRepeatingCharacters
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-13T15:20:24+08:00" content="2016-12-13">
+              2016-12-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/程序设计/" itemprop="url" rel="index">
+                    <span itemprop="name">程序设计</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/程序设计/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+             <span id="/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/" class="leancloud_visitors" data-flag-title="leetcode-longestSubStringWithOutRepeatingCharacters">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">热度 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="longest-substring-without-repeating-characters"><a href="#longest-substring-without-repeating-characters" class="headerlink" title="longest-substring-without-repeating-characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">longest-substring-without-repeating-characters</a></h3><p>Given a string, find the length of the longest substring without repeating characters.</p>
+<a id="more"></a>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
+<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.</p>
+<p>Given “bbbbb”, the answer is “b”, with the length of 1.</p>
+<p>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　阅读本题后，都会有大致的概念应该怎么去处理。大题思路就是从头到位遍历字符串，记录所有的没有出现重复字符的子字符串，并记录其长度。最后选出最大长度输出。这个思路理论上应该可以解决我们的问题，但是如何写出漂亮解答，还是需要我们稍作思考的。<br>　　让我们再重新审阅一下这个题目。如果我们假设子字符串s[i..j]为无重复子字符串，其长度为ｌ。如果s[j+1]也不存在在s[i..j]中，那么s[i..j+1]也是无重复子字符串，其长度更新为l+1。根据这种设计，我们完全可以套用动态规划来解决这个问题。（前面的文章有介绍)<br>　　那么我们进而去丰富我们的动态规划设计：</p>
+<ol>
+<li>标记子字符串起点substringstart。若s[j+1]与s[i..j]中无重复字符，那么s[i..j+1]的子字符串起点也为i；如果有重复，则其起点变为i+1;</li>
+<li>记录最大长度longest。当前长度[i..j]为j-i+1，与longest做比较，则其较大的更新longest。</li>
+<li>因为使用hashmap来优化记录存储。</li>
+</ol>
+<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; hashMap(<span class="number">256</span>, <span class="number">-1</span>);</div><div class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>, subStringStart = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)</div><div class="line">        &#123;</div><div class="line">            subStringStart = subStringStart &gt;= hashMap[s[i]] + <span class="number">1</span> ? subStringStart : hashMap[s[i]] + <span class="number">1</span>;</div><div class="line">            hashMap[s[i]] = i;</div><div class="line">            longest = longest &gt;= i-subStringStart +<span class="number">1</span> ? longest : i - subStringStart + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> longest;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">string</span> s1 = <span class="string">"abcabcbb"</span>;</div><div class="line">    <span class="built_in">string</span> s2 = <span class="string">"a"</span>;</div><div class="line">    <span class="built_in">string</span> s3 = <span class="string">"abc"</span>;</div><div class="line">    <span class="built_in">string</span> s4 = <span class="string">"aab"</span>;</div><div class="line">    Solution solution;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s1) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s2) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s3) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s4) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/12/05/网站浏览记录/" itemprop="url">
-              
-                <span itemprop="name">网站浏览记录</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lenny Bai WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Lenny Bai Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-05T15:04:18+08:00"
-              content="2016-12-05" >
-          12-05
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+	<div>
+	  
+	    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/程序设计/" rel="tag">#程序设计</a>
+          
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/13/算法导论-动态规划/" rel="next" title="算法导论-动态规划">
+                <i class="fa fa-chevron-left"></i> 算法导论-动态规划
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -345,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -440,6 +611,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#longest-substring-without-repeating-characters"><span class="nav-number">1.</span> <span class="nav-text">longest-substring-without-repeating-characters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coding"><span class="nav-number">4.</span> <span class="nav-text">coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -540,6 +722,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

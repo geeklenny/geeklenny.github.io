@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-12-13T03:41:17.991Z</updated>
+  <updated>2016-12-13T07:43:40.752Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode-longestSubStringWithOutRepeatingCharacters</title>
+    <link href="http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/"/>
+    <id>http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/</id>
+    <published>2016-12-13T07:20:24.000Z</published>
+    <updated>2016-12-13T07:43:40.752Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="longest-substring-without-repeating-characters"><a href="#longest-substring-without-repeating-characters" class="headerlink" title="longest-substring-without-repeating-characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">longest-substring-without-repeating-characters</a></h3><p>Given a string, find the length of the longest substring without repeating characters.</p>
+<a id="more"></a>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
+<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.</p>
+<p>Given “bbbbb”, the answer is “b”, with the length of 1.</p>
+<p>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　阅读本题后，都会有大致的概念应该怎么去处理。大题思路就是从头到位遍历字符串，记录所有的没有出现重复字符的子字符串，并记录其长度。最后选出最大长度输出。这个思路理论上应该可以解决我们的问题，但是如何写出漂亮解答，还是需要我们稍作思考的。<br>　　让我们再重新审阅一下这个题目。如果我们假设子字符串s[i..j]为无重复子字符串，其长度为ｌ。如果s[j+1]也不存在在s[i..j]中，那么s[i..j+1]也是无重复子字符串，其长度更新为l+1。根据这种设计，我们完全可以套用动态规划来解决这个问题。（前面的文章有介绍)<br>　　那么我们进而去丰富我们的动态规划设计：</p>
+<ol>
+<li>标记子字符串起点substringstart。若s[j+1]与s[i..j]中无重复字符，那么s[i..j+1]的子字符串起点也为i；如果有重复，则其起点变为i+1;</li>
+<li>记录最大长度longest。当前长度[i..j]为j-i+1，与longest做比较，则其较大的更新longest。</li>
+<li>因为使用hashmap来优化记录存储。</li>
+</ol>
+<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; hashMap(<span class="number">256</span>, <span class="number">-1</span>);</div><div class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>, subStringStart = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)</div><div class="line">        &#123;</div><div class="line">            subStringStart = subStringStart &gt;= hashMap[s[i]] + <span class="number">1</span> ? subStringStart : hashMap[s[i]] + <span class="number">1</span>;</div><div class="line">            hashMap[s[i]] = i;</div><div class="line">            longest = longest &gt;= i-subStringStart +<span class="number">1</span> ? longest : i - subStringStart + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> longest;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">string</span> s1 = <span class="string">"abcabcbb"</span>;</div><div class="line">    <span class="built_in">string</span> s2 = <span class="string">"a"</span>;</div><div class="line">    <span class="built_in">string</span> s3 = <span class="string">"abc"</span>;</div><div class="line">    <span class="built_in">string</span> s4 = <span class="string">"aab"</span>;</div><div class="line">    Solution solution;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s1) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s2) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s3) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s4) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;longest-substring-without-repeating-characters&quot;&gt;&lt;a href=&quot;#longest-substring-without-repeating-characters&quot; class=&quot;headerlink&quot; title=&quot;longest-substring-without-repeating-characters&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/longest-substring-without-repeating-characters/&quot;&gt;longest-substring-without-repeating-characters&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Given a string, find the length of the longest substring without repeating characters.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="程序设计" scheme="http://lennybai.cn/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="leetcode" scheme="http://lennybai.cn/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/leetcode/"/>
+    
+    
+      <category term="程序设计" scheme="http://lennybai.cn/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="leetcode" scheme="http://lennybai.cn/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>算法导论-动态规划</title>
