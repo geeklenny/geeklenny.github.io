@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title><![CDATA[算法导论-动态规划]]></title>
+      <url>http://lennybai.cn/2016/12/13/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>　　前面我们已经介绍了分治思想。分治思想是将问题划分为<strong>互不相交的子问题</strong>，递归的求解子问题，再将它们的解组合起来，求出原问题的解。这一篇文章我们将一起来讨论一下动态规划。它是算法中另一个重要的思想。　<br>　　动态规划的思想与分治思想相反，动态规划是用于<strong>子问题重叠</strong>的情况，即不同的子问题具有相同的子子问题。在这种情况下，动态规划相对于分治算法的优势在于，分治算法会重复的计算本是相同的子子问题，导致运算时间的浪费，而动态规划则只会计算一次。<br>　　动态规划常常用于解决最优解的问题。这类问题常常有很多可行的解，我们希望的是从这些解中找到最优解。<br><a id="more"></a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>　　类似于分治算法的三个步骤，动态规划的思考和设计层面也具有四个步骤。</p>
+<ol>
+<li>刻画一个最优解结构</li>
+<li>递归定义最优解的值</li>
+<li>计算最优解的值，通常使用自底向上的方法</li>
+<li>利用计算出来的信息构造最优解</li>
+</ol>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><p>　　这里我们通过一个简单的例子对动态规划的思想进行一下实践。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><table>
+<thead>
+<tr>
+<th>长度i</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>价格Pi</strong></td>
+<td>1</td>
+<td>5</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>17</td>
+<td>17</td>
+<td>20</td>
+<td>24</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>　　上述表格描述的是一个钢条公司的钢条长度和价格的关系。它们希望得到给定长度为n的钢条，如何切割才能达到利益最大化。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>　　我们用n表示钢条的长度，i表示切割的长度，Pi表示切割长度对应的收益，Rn代表长度为n的钢条对应的最大收益。<br>　　则我们可以得出Rn=max(Pi + Rn-1)。这个推倒式的表明的是对于n长的钢条。进行i(i从1到n)的长度的切割，获得的切割收益与剩余收益的和。再从i=1到i=n中选取最大的值，就是该n长钢条能获取的最大收益。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>　　动态规划有两种等价的实现方法，分别为带备忘的自顶向下法和自底向上法。带备忘的自顶向下法，是按照自然的递归形式编写过程，但是过程中会保存没格子问题的解。自底向上法则需要恰当的定义子问题的规模，使得任何子问题都只依赖更小的子问题求解。<br>下面列出两种实现的伪代码。</p>
+<p>自顶向下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">MEMOIZED-CUT-ROD(p,n)</div><div class="line">        let r[0..n] be a new array</div><div class="line">        for i = 0 to n</div><div class="line">                r[i]=-∞</div><div class="line">        return MEMOIZED-CUT-ROD-AUX(p,n,r)</div><div class="line"></div><div class="line">MEMOIZED-CUT-ROD-AUX(p,n,r)</div><div class="line">        if r[n]≥0</div><div class="line">                return r[n]</div><div class="line">        if n== 0</div><div class="line">                q = 0</div><div class="line">        else q = -∞</div><div class="line">                for i = 1 to n</div><div class="line">                        q = max(q, p[i] + MEMOIZED-CUT-ROD-AUX(p, n-i, r))</div><div class="line">        r[n]=q</div><div class="line">        return q</div></pre></td></tr></table></figure></p>
+<p>自底向上:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">BOTTOM-UP-CUT-ROD(p,n)</div><div class="line">        let r[0..n] be a new array</div><div class="line">        r[0]=0</div><div class="line">        for j = 1 to n</div><div class="line">              q = -∞</div><div class="line">              for i = 1 to j</div><div class="line">                      q=max(q,p[i]+r[j-i])</div><div class="line">              r[j]=q</div><div class="line">        return r[n]</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[leetcode-AddTwoNum]]></title>
       <url>http://lennybai.cn/2016/12/12/leetcode-AddTwoNum/</url>
       <content type="html"><![CDATA[<h3 id="AddTwoNum"><a href="#AddTwoNum" class="headerlink" title="AddTwoNum"></a><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="external">AddTwoNum</a></h3><p>You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
