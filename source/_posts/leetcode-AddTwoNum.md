@@ -24,6 +24,7 @@ You are given two linked lists representing two non-negative numbers. The digits
 　　思路不算复杂，就是按照我们正常的加法竖式计算的方式来完成此题就可以。需要注意的细节有两点:
 1. 进位值
 2. 判断list结尾
+
 　　关于进位值(程序中定义为extra变量)在本题中，如果是list最后两个数字相加的进位，往往会被忽略。第二点，两个list不一定是等长的，所以在遍历的过程中，需要对list结尾进行判断，防止运行时空指针错误。注意这两点，可能就可以正确完成本题了。
 
 ### coding
