@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
 <meta property="og:description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
-<meta property="og:updated_time" content="2016-12-13T07:43:40.752Z">
+<meta property="og:updated_time" content="2016-12-14T00:50:54.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode-longestSubStringWithOutRepeatingCharacters">
 <meta name="twitter:description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
@@ -388,7 +388,7 @@
 </blockquote>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　阅读本题后，都会有大致的概念应该怎么去处理。大题思路就是从头到位遍历字符串，记录所有的没有出现重复字符的子字符串，并记录其长度。最后选出最大长度输出。这个思路理论上应该可以解决我们的问题，但是如何写出漂亮解答，还是需要我们稍作思考的。<br>　　让我们再重新审阅一下这个题目。如果我们假设子字符串s[i..j]为无重复子字符串，其长度为ｌ。如果s[j+1]也不存在在s[i..j]中，那么s[i..j+1]也是无重复子字符串，其长度更新为l+1。根据这种设计，我们完全可以套用动态规划来解决这个问题。（前面的文章有介绍)<br>　　那么我们进而去丰富我们的动态规划设计：</p>
 <ol>
-<li>标记子字符串起点substringstart。若s[j+1]与s[i..j]中无重复字符，那么s[i..j+1]的子字符串起点也为i；如果有重复，则其起点变为i+1;</li>
+<li>标记子字符串起点substringstart。若s[j+1]与s[i..j]中无重复字符，那么s[i..j+1]的子字符串起点也为i；如果与r(i≤r≤j)重复，则其起点变为r+1;</li>
 <li>记录最大长度longest。当前长度[i..j]为j-i+1，与longest做比较，则其较大的更新longest。</li>
 <li>因为使用hashmap来优化记录存储。</li>
 </ol>
