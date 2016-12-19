@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://lennybai.cn/2016/12/02/算法导论1/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
 <meta property="og:description" content="在学习各种编程语言的时候，数据结构与算法一般都会作为重点课程来指出。而谈到算法，算法导论一书又常常被大家提起。然而作为一个编程界的老鸟，技术层面的菜鸟，最近才开始啃算法导论，实属令自己汗颜。不过拾起总比放下的要好，所以这里根据自己的理解做一些记录。并在阅读初期就设定了一些目标，包括理解并学习各种常用算法及其设计思路，学习并写好伪代码等。">
-<meta property="og:updated_time" content="2016-12-09T03:11:06.459Z">
+<meta property="og:updated_time" content="2016-12-19T02:01:53.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论(1)——写好伪代码">
 <meta name="twitter:description" content="在学习各种编程语言的时候，数据结构与算法一般都会作为重点课程来指出。而谈到算法，算法导论一书又常常被大家提起。然而作为一个编程界的老鸟，技术层面的菜鸟，最近才开始啃算法导论，实属令自己汗颜。不过拾起总比放下的要好，所以这里根据自己的理解做一些记录。并在阅读初期就设定了一些目标，包括理解并学习各种常用算法及其设计思路，学习并写好伪代码等。">
@@ -394,6 +394,7 @@
 </ul>
 <p>　　伪代码的使用方法和约定都比较宽松，目的都是能够写出清晰易懂的伪代码。</p>
 <h3 id="伪代码实践"><a href="#伪代码实践" class="headerlink" title="伪代码实践"></a>伪代码实践</h3><p>   这里列举一个插入排序的算法的伪代码实现，大家一起来感受一下气场。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">INSERT-SORT(A)</div><div class="line">    for j=2 to A.length</div><div class="line">        key=A[j]</div><div class="line">        // Insert A[j] into the sorted sequence A[1..j-1].</div><div class="line">        i = j-1;</div><div class="line">      while i&gt;0 and A[i]&gt;key</div><div class="line">          A[i+1]=A[j]</div><div class="line">          i = i-1</div><div class="line">      A[i+1]=key</div></pre></td></tr></table></figure></p>
+<h3 id="归并排序-merge-sort"><a href="#归并排序-merge-sort" class="headerlink" title="归并排序(merge sort)"></a>归并排序(merge sort)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">MERGE(A,p,q,r)</div><div class="line">        n1=q-p+1</div><div class="line">        n2=r-q</div><div class="line">        let L[0..n1] and R[0..n2] be a new array</div><div class="line">        for i = 0 to n1-1</div><div class="line">                L[i]=A[p+i]</div><div class="line">        for j = 0 to n2-1</div><div class="line">                R[j]=A[q+1+j]</div><div class="line">        L[n1]=∞</div><div class="line">        L[n2]=∞</div><div class="line">        i=0</div><div class="line">        j=0</div><div class="line">        for k = p to r</div><div class="line">                if L[i] &lt; R[j]</div><div class="line">                        A[k]=L[i]</div><div class="line">                        i = i + 1</div><div class="line">                else</div><div class="line">                        A[k]=R[j]</div><div class="line">                        j = j +1</div><div class="line"></div><div class="line">MERGE-SORT(A,p,r)</div><div class="line">        if(p&lt;r)</div><div class="line">                q=[(p+r)/2]</div><div class="line">                MERGE-SORT(A,p,q)</div><div class="line">                MERGE-SORT(A,q+1,r)</div><div class="line">                MERGE(A,p,q,r)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -532,7 +533,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -540,7 +541,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -549,7 +550,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -622,7 +623,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是算法"><span class="nav-number">1.</span> <span class="nav-text">什么是算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的描述（伪代码）"><span class="nav-number">2.</span> <span class="nav-text">算法的描述（伪代码）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写好伪代码"><span class="nav-number">3.</span> <span class="nav-text">如何写好伪代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪代码实践"><span class="nav-number">4.</span> <span class="nav-text">伪代码实践</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是算法"><span class="nav-number">1.</span> <span class="nav-text">什么是算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的描述（伪代码）"><span class="nav-number">2.</span> <span class="nav-text">算法的描述（伪代码）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写好伪代码"><span class="nav-number">3.</span> <span class="nav-text">如何写好伪代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪代码实践"><span class="nav-number">4.</span> <span class="nav-text">伪代码实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序-merge-sort"><span class="nav-number">5.</span> <span class="nav-text">归并排序(merge sort)</span></a></li></ol></div>
             
           </div>
         </section>

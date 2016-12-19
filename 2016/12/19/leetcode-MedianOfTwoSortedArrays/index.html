@@ -94,16 +94,19 @@
 
 
 
-<meta name="description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
+<meta name="description" content="MedianOfTwoSortedArraysThere are two sorted arrays nums1 and nums2 of size m and n respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-longestSubStringWithOutRepeatingCharacters">
-<meta property="og:url" content="http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/index.html">
+<meta property="og:title" content="leetcode-MedianOfTwoSortedArrays">
+<meta property="og:url" content="http://lennybai.cn/2016/12/19/leetcode-MedianOfTwoSortedArrays/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
-<meta property="og:updated_time" content="2016-12-14T00:50:54.760Z">
+<meta property="og:description" content="MedianOfTwoSortedArraysThere are two sorted arrays nums1 and nums2 of size m and n respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
+<meta property="og:updated_time" content="2016-12-19T03:12:39.470Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode-longestSubStringWithOutRepeatingCharacters">
-<meta name="twitter:description" content="longest-substring-without-repeating-charactersGiven a string, find the length of the longest substring without repeating characters.">
+<meta name="twitter:title" content="leetcode-MedianOfTwoSortedArrays">
+<meta name="twitter:description" content="MedianOfTwoSortedArraysThere are two sorted arrays nums1 and nums2 of size m and n respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
 
 
 
@@ -124,10 +127,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/"/>
+  <link rel="canonical" href="http://lennybai.cn/2016/12/19/leetcode-MedianOfTwoSortedArrays/"/>
 
 
-  <title> leetcode-longestSubStringWithOutRepeatingCharacters | Lennybai' Blog </title>
+  <title> leetcode-MedianOfTwoSortedArrays | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +304,7 @@
             
             
               
-                leetcode-longestSubStringWithOutRepeatingCharacters
+                leetcode-MedianOfTwoSortedArrays
               
             
           </h1>
@@ -313,8 +316,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-13T15:20:24+08:00" content="2016-12-13">
-              2016-12-13
+            <time itemprop="dateCreated" datetime="2016-12-19T11:04:34+08:00" content="2016-12-19">
+              2016-12-19
             </time>
           </span>
 
@@ -357,7 +360,7 @@
 
           
           
-             <span id="/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/" class="leancloud_visitors" data-flag-title="leetcode-longestSubStringWithOutRepeatingCharacters">
+             <span id="/2016/12/19/leetcode-MedianOfTwoSortedArrays/" class="leancloud_visitors" data-flag-title="leetcode-MedianOfTwoSortedArrays">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,20 +382,23 @@
       
 
       
-        <h3 id="longest-substring-without-repeating-characters"><a href="#longest-substring-without-repeating-characters" class="headerlink" title="longest-substring-without-repeating-characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">longest-substring-without-repeating-characters</a></h3><p>Given a string, find the length of the longest substring without repeating characters.</p>
+        <h3 id="MedianOfTwoSortedArrays"><a href="#MedianOfTwoSortedArrays" class="headerlink" title="MedianOfTwoSortedArrays"></a><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="external">MedianOfTwoSortedArrays</a></h3><p>There are two sorted arrays nums1 and nums2 of size m and n respectively.</p>
+<p>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
 <a id="more"></a>
 <h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
-<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.</p>
-<p>Given “bbbbb”, the answer is “b”, with the length of 1.</p>
-<p>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+<p>nums1 = [1, 3]<br>nums2 = [2]</p>
+<p>The median is 2.0</p>
+<p>nums1 = [1, 2]<br>nums2 = [3, 4]</p>
+<p>The median is (2 + 3)/2 = 2.5</p>
 </blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　阅读本题后，都会有大致的概念应该怎么去处理。大题思路就是从头到位遍历字符串，记录所有的没有出现重复字符的子字符串，并记录其长度。最后选出最大长度输出。这个思路理论上应该可以解决我们的问题，但是如何写出漂亮解答，还是需要我们稍作思考的。<br>　　让我们再重新审阅一下这个题目。如果我们假设子字符串s[i..j]为无重复子字符串，其长度为ｌ。如果s[j+1]也不存在在s[i..j]中，那么s[i..j+1]也是无重复子字符串，其长度更新为l+1。根据这种设计，我们完全可以套用动态规划来解决这个问题。（前面的文章有介绍)<br>　　那么我们进而去丰富我们的动态规划设计：</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　本体对时间复杂度有要求。当我看到这个题目的时候，有两点引起我的注意，第一个就是两个数组都是有序的，第二个就是时间复杂度为log(n)。这是我想到了归并排序。就这样我按照归并排序的思路完成了本题。</p>
+<p>部分细节：</p>
 <ol>
-<li>标记子字符串起点substringstart。若s[j+1]与s[i..j]中无重复字符，那么s[i..j+1]的子字符串起点也为i；如果与r(i≤r≤j)重复，则其起点变为r+1;</li>
-<li>记录最大长度longest。当前长度[i..j]为j-i+1，与longest做比较，则其较大的更新longest。</li>
-<li>因为使用hashmap来优化记录存储。</li>
+<li>中位数并不总是一个。</li>
+<li>遍历数组不需要全部遍历。</li>
+<li>注意归并排序的代码实现。</li>
 </ol>
-<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; hashMap(<span class="number">256</span>, <span class="number">-1</span>);</div><div class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>, subStringStart = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)</div><div class="line">        &#123;</div><div class="line">            subStringStart = subStringStart &gt;= hashMap[s[i]] + <span class="number">1</span> ? subStringStart : hashMap[s[i]] + <span class="number">1</span>;</div><div class="line">            hashMap[s[i]] = i;</div><div class="line">            longest = longest &gt;= i-subStringStart +<span class="number">1</span> ? longest : i - subStringStart + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> longest;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">string</span> s1 = <span class="string">"abcabcbb"</span>;</div><div class="line">    <span class="built_in">string</span> s2 = <span class="string">"a"</span>;</div><div class="line">    <span class="built_in">string</span> s3 = <span class="string">"abc"</span>;</div><div class="line">    <span class="built_in">string</span> s4 = <span class="string">"aab"</span>;</div><div class="line">    Solution solution;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s1) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s2) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s3) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; solution.lengthOfLongestSubstring(s4) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> size = nums1.size()+nums2.size();</div><div class="line">        <span class="keyword">int</span> mid1 = size/<span class="number">2</span>;</div><div class="line">        <span class="keyword">int</span> mid2 = mid1 - (size%<span class="number">2</span>==<span class="number">0</span>?<span class="number">1</span>:<span class="number">0</span>);</div><div class="line">        <span class="keyword">int</span> temp, mid1num=<span class="number">0</span>,mid2num=<span class="number">0</span>,i=<span class="number">0</span>,j=<span class="number">0</span>;</div><div class="line">        nums1.push_back(INT_MAX);</div><div class="line">        nums2.push_back(INT_MAX);</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span> ; k &lt; size; k++)</div><div class="line">        &#123;</div><div class="line">            temp = <span class="number">0</span>;</div><div class="line">            <span class="keyword">if</span>( nums1[i] &lt; nums2[j] )</div><div class="line">            &#123;</div><div class="line">                temp = nums1[i];</div><div class="line">                i++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                temp = nums2[j];</div><div class="line">                j++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>( k == mid2 )</div><div class="line">            &#123;</div><div class="line">                mid2num = temp;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>( k == mid1 )</div><div class="line">            &#123;</div><div class="line">                mid1num = temp;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> (mid1num + mid2num) / <span class="number">2.0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    Solution s;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums1 = &#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums2 = &#123;<span class="number">2</span>&#125;;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums3 = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums4 = &#123;<span class="number">3</span>,<span class="number">4</span>&#125;;</div><div class="line"></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.findMedianSortedArrays(nums1, nums2) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.findMedianSortedArrays(nums3, nums4) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
 
       
@@ -458,17 +464,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/13/算法导论-动态规划/" rel="next" title="算法导论-动态规划">
-                <i class="fa fa-chevron-left"></i> 算法导论-动态规划
+              <a href="/2016/12/15/ActiveMQ使用记录/" rel="next" title="ActiveMQ使用记录">
+                <i class="fa fa-chevron-left"></i> ActiveMQ使用记录
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/15/ActiveMQ使用记录/" rel="prev" title="ActiveMQ使用记录">
-                ActiveMQ使用记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -622,7 +624,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#longest-substring-without-repeating-characters"><span class="nav-number">1.</span> <span class="nav-text">longest-substring-without-repeating-characters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coding"><span class="nav-number">4.</span> <span class="nav-text">coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MedianOfTwoSortedArrays"><span class="nav-number">1.</span> <span class="nav-text">MedianOfTwoSortedArrays</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coding"><span class="nav-number">4.</span> <span class="nav-text">coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li></ol></div>
             
           </div>
         </section>
