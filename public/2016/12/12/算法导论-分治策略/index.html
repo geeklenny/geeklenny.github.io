@@ -1,0 +1,1058 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="GhVHfUoJL-p0Ri1Q4oxQXYgx8Fc_tszyvHaPVkAHVRw" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Great Vibes:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="读书笔记,算法导论,分治策略,快速排序,堆排序," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Lennybai' Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="概述　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。
+简介　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:
+
+分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。
+解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论--分治策略">
+<meta property="og:url" content="http://lennybai.cn/2016/12/12/算法导论-分治策略/index.html">
+<meta property="og:site_name" content="Lennybai' Blog">
+<meta property="og:description" content="概述　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。
+简介　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:
+
+分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。
+解">
+<meta property="og:updated_time" content="2016-12-14T00:51:53.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法导论--分治策略">
+<meta name="twitter:description" content="概述　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。
+简介　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:
+
+分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。
+解">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6349007542026241000',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://lennybai.cn/2016/12/12/算法导论-分治策略/"/>
+
+
+  <title> 算法导论--分治策略 | Lennybai' Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?43e27cad42e804a2e171ab407c0fd60c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Lennybai' Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fa fa-comments"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                算法导论--分治策略
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-12T10:09:14+08:00" content="2016-12-12">
+              2016-12-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/读书笔记/算法导论/" itemprop="url" rel="index">
+                    <span itemprop="name">算法导论</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+             <span id="/2016/12/12/算法导论-分治策略/" class="leancloud_visitors" data-flag-title="算法导论--分治策略">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">热度 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>　　算法中有两个非常重要的思想分别是：分治策略和动态规划。它们通常可以将处理复杂的问题，转化为处理Ｎ个相关的子问题。通过这种方式，给予人们清晰的思路的同时，降低处理问题的难度。这一篇文章我们来介绍分治策略，并给出几个经典的算法来进行展示。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>　　分治策略中，往往是通过递归去求解问题，并在每层递归中应用如下三个步骤:</p>
+<ol>
+<li>分解:将问题划分为一些子问题，子问题的形式与原问题一样，只是规模更小。</li>
+<li>解决:递归的求解子问题，如果子问题的规模足够小，则停止递归，直接求解。</li>
+<li>合并:讲子问题的解组合成原问题的解。</li>
+</ol>
+<a id="more"></a>
+<h1 id="算法举例"><a href="#算法举例" class="headerlink" title="算法举例"></a>算法举例</h1><p>　　在上一篇文章里，我们看到的归并排序其实使用的就是分治思想。这里我们再列举两个常用的，并且使用分治思想的算法:堆排序和快速排序。</p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>　　堆排序的时间复杂度为O(nlogn)，并且所需的额外存储数量固定。堆通常使用数组进行存储，它可以被看成一个近似的完全二叉树，它的每一个节点对应着数组中的一个元素。接下来我们试着去实现堆排序。<br>　　首先我们来理解一下最大堆。如果按照刚才我们所提到的，将堆看做成二叉树。那么如果是最大堆，其特点是A[PARENT(i)]&gt;=A[i]。这个公示代表着，任何一个节点不大于其父节点。这里我们用伪代码表示一下父节点和左右子节点的关系。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">PARENT(i)</div><div class="line">        return [i/2]</div><div class="line">LEFT(i)</div><div class="line">        return 2i</div><div class="line">RIGHT(i)</div><div class="line">        return 2i+1</div></pre></td></tr></table></figure></p>
+<p>　　接下来我们讨论一下堆排序算法。堆排序的一个重要环节是调节堆。详细的说，比如我们目标是构建最大堆，在Ｎ个节点的树中总会有不满足最大堆要求的父子节点关系，那么我们就要进行调整。<br>　　堆排序的第一个环节就是构建最大堆。这里我们假设某个节点的两个子节点都已经是最大树的根节点，在这种情况下，再对该节点进行调整是最容易的。所以我们构建最大堆的思路是先讲子树构建成最大堆，然后开始父节点构建。这样我们将会完成最大堆的构造。然而，这里大家一定要注意，最大堆构建完成并不代表着数组已经排序完成。比如(16,14,10,8,7,9,3)就是最大堆，但是并不是有序的。它只保证了其父节点不小于该节点。<br>　　最后我们来完成排序工作。具体的步骤就是，讲根节点与最后一个节点交换，并从树种去除，然后对树进行调整。不断的迭代这个过程，完成最终的排序工作。<br>　　这里开始为自己的表达能力感到捉急。我们还是来看伪代码吧。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//第一步，调整堆</div><div class="line">MAX-HEAPIFY(A,i)</div><div class="line">        l = LEFT(i)</div><div class="line">        r = RIGHT(i)</div><div class="line">        largest = i</div><div class="line">        if l &lt;= heapsize and A[l] &gt; A[i]</div><div class="line">                largest = l</div><div class="line">        if r &lt;= heapsize and A[r] &gt; A[i]</div><div class="line">                largest = r</div><div class="line">        if largest != i</div><div class="line">                exchange(A[i],a[largest])</div><div class="line">                MAX-HEAPIFY(A,largest)</div></pre></td></tr></table></figure></p>
+<p>　　第一步，通过递归来调整以i为根节点的子树为最大堆。以此为基础，我们讲堆从子节点向上遍历，不断地调整子树为最大树来完成最大堆的构建。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第二步，构建最大堆</div><div class="line">BUILD-MAX-HEAP(A)</div><div class="line">        A.heapsize = A.length</div><div class="line">        for i = [A.length/2] downto 1</div><div class="line">                MAX-HEAPIFY(A,i)</div></pre></td></tr></table></figure></p>
+<p>　　在完成最大堆的构建之后，我们已经完成了堆排序最核心的两个步骤，那么我们现在完成堆排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//堆排序</div><div class="line">HEAP-SORT(A)</div><div class="line">        BUILD-MAX-HEAP(A)</div><div class="line">        for i = A.length downto 2</div><div class="line">                exchange A[i] with a[i]</div><div class="line">                A.heapsize = A.heapsize-1</div><div class="line">                MAX-HEAPIFY(A,1)</div></pre></td></tr></table></figure></p>
+<p>  　锵锵锵锵，堆排序完成。</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>　　另一个使用分治思想的常用算法就是快速排序。快速排序的期望时间复杂度是O(nlogn)。但是最坏情况的时间复杂度又O(n*n)。虽然看起来最坏情况的时间复杂度很差，但是实际排序应用中它往往是最好的选择，因为它的平均性很好，而且O(nlogn)的常数因子非常小。<br>　　快速排序的三步分治过程:</p>
+<ol>
+<li>分解:　将数组A[p..r]，以A[q]为界换分为两个子数组，子数组可以为空,q可以自由选择。使得A[p..q-1]中的元素都小于A[q],A[q+1..r]中的元素都大于A[q]。</li>
+<li>解决:　通过递归调用快速排序，对子数组A[p..q-1]和A[q+1..r]进行排序</li>
+<li>合并: 因为子数组都是原址排序，所以不需要合并操作:数组A[p..r]已经有序</li>
+</ol>
+<p>　　来看具体的伪代码实现:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">PARTITION(A,p,r)</div><div class="line">        x = A[r]</div><div class="line">        i = p - 1</div><div class="line">        for j = p to r - 1</div><div class="line">                if A[j] &lt;= x</div><div class="line">                        i = i + 1</div><div class="line">                        exchange A[i] with A[j]</div><div class="line">        exchage A[i+1] with A[r]</div><div class="line">        return i + 1</div></pre></td></tr></table></figure></p>
+<p>　　在快速排序中，PARTITION是非常关键的部分，它的作用有两个，第一个是选定界限值q，第二个就是对输入数组进行原址重排。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">QUICKSORT(A,p,r)</div><div class="line">        if p &lt; r</div><div class="line">                q = PARTITION(A,p,r)</div><div class="line">                QUICKSORT(A,p,q-1)</div><div class="line">                QUICKSORT(A,q+1,r)</div></pre></td></tr></table></figure></p>
+<p>　　快速排序完成</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lenny Bai WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Lenny Bai Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+	<div>
+	  
+	    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+            <a href="/tags/算法导论/" rel="tag">#算法导论</a>
+          
+            <a href="/tags/分治策略/" rel="tag">#分治策略</a>
+          
+            <a href="/tags/快速排序/" rel="tag">#快速排序</a>
+          
+            <a href="/tags/堆排序/" rel="tag">#堆排序</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/09/leetcode-twosum/" rel="next" title="leetcode-two sum">
+                <i class="fa fa-chevron-left"></i> leetcode-two sum
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/12/leetcode-AddTwoNum/" rel="prev" title="leetcode-AddTwoNum">
+                leetcode-AddTwoNum <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Lenny Bai" />
+          <p class="site-author-name" itemprop="name">Lenny Bai</p>
+          <p class="site-description motion-element" itemprop="description">积跬步，以至千里</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/geeklenny" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://coolshell.cn" title="酷壳" target="_blank">酷壳</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://dirtysalt.github.io/" title="Dirtysalt" target="_blank">Dirtysalt</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/docs/asset-folders.html" title="Hexo Documentation" target="_blank">Hexo Documentation</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" title="cmd markdown" target="_blank">cmd markdown</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法举例"><span class="nav-number">3.</span> <span class="nav-text">算法举例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序"><span class="nav-number">3.1.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">3.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lenny Bai</span>&nbsp;&nbsp;&nbsp;
+</div>
+<span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span><span id="busuanzi_container_site_uv">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;访客数 <span id="busuanzi_value_site_uv"></span> 人次</span><span id="busuanzi_container_page_pv">
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+    
+	  <div class="side-buttons">
+  <div class="side-buttons-box mobile_code">
+    <span class="bt-left"><i class="fa fa-mobile-phone fa-2x" title="手机访问"></i></span><span style="font-size:1px;display:inline-block;line-height:16px;clear:both;">扫二维码</span>
+	<div class="code_img"><i></i><img src="/images/lennybaiwebsite.png" alt="扫一扫，用手机访问本站"><p>扫一扫，用手机访问本站</p></div>
+  </div>
+  <div class="side-buttons-box mail_box">
+    <a href="mailto:lennybai@live.cn"><span class="bt-left"><i class="fa fa-envelope-o fa-lg" title="发送邮件"></i></span><span style="font-size:1px;display:inline-block;line-height:16px;clear:both;">发送邮件</span></a>
+  </div>
+</div>
+
+	
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"geeklenny"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("UpLAFy3kjEeptgKDw6dUyloz-gzGzoHsz", "KICIUD7E87tnMGFvLThmVYm3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0+"°C");
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time+"°C");
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time')+"°C");
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time')+"°C");
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
