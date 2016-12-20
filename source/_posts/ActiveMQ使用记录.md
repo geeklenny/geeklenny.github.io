@@ -20,6 +20,7 @@ categories:
 > Release:	16.04
 > Codename:	xenial
 ```
+<!--more-->
 　　对于工具的使用，用心去研读一下官方文档还是很有必要的。在参考文献中我列出了官网的链接，感兴趣的朋友可以阅读一下。ActiveMQ的环境要求，在官方文档中指出为：JRE和JDK。当然我是个懒汉，在这里不太希望用源码去安装ActiveMQ。我是这么干的:
 1. 安装java
 > sudo add-apt-repository ppa:webupd8team/java  
@@ -38,5 +39,3 @@ categories:
 ***
 # 3 参考文献
 - [1]: [ActiveMQ Document](http://activemq.apache.org/version-5-getting-started.html#Version5GettingStarted-DocumentOrganization)
-
-# 使用
