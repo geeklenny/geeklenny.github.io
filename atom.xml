@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-12-20T08:19:23.309Z</updated>
+  <updated>2016-12-21T07:25:27.377Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode-ReverseInteger</title>
+    <link href="http://lennybai.cn/2016/12/21/leetcode-ReverseInteger/"/>
+    <id>http://lennybai.cn/2016/12/21/leetcode-ReverseInteger/</id>
+    <published>2016-12-21T07:13:37.000Z</published>
+    <updated>2016-12-21T07:25:27.377Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="external">Reverse Integer</a></h3><p>Reverse digits of an integer.</p>
+<blockquote>
+<p>Example1: x = 123, return 321</p>
+<p>Example2: x = -123, return -321</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　本题其实思路很简单，我个人认为只是问题的考察点，应该是对人们对边界的认识。简单的翻转我们都能想到，通过按10取余来获取最后一位,通过除以10来进行移位。一定要记得考虑int的边界。</p>
+<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"limits.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">long</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            result = result * <span class="number">10</span> + x % <span class="number">10</span>;</div><div class="line">            x = x/<span class="number">10</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> (result &gt; INT_MAX || result &lt; INT_MIN) ? <span class="number">0</span> : result ;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    Solution s;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">123456</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">1000</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">1001</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">-123</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">-1234</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.reverse(<span class="number">1534236469</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">9646324350</span>+<span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Reverse-Integer&quot;&gt;&lt;a href=&quot;#Reverse-Integer&quot; class=&quot;headerlink&quot; title=&quot;Reverse Integer&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-integer/&quot;&gt;Reverse Integer&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Reverse digits of an integer.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example1: x = 123, return 321&lt;/p&gt;
+&lt;p&gt;Example2: x = -123, return -321&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="程序设计" scheme="http://lennybai.cn/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="leetcode" scheme="http://lennybai.cn/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/leetcode/"/>
+    
+    
+      <category term="程序设计" scheme="http://lennybai.cn/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="leetcode" scheme="http://lennybai.cn/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>c++11条件变量</title>
@@ -436,15 +475,22 @@
     <link href="http://lennybai.cn/2016/12/06/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/"/>
     <id>http://lennybai.cn/2016/12/06/编程珠玑/</id>
     <published>2016-12-06T02:27:32.000Z</published>
-    <updated>2016-12-19T08:15:56.293Z</updated>
+    <updated>2016-12-21T07:12:52.897Z</updated>
     
-    <content type="html"><![CDATA[<p>编程珠玑，悟性太低，择日再来一遍。</p>
+    <content type="html"><![CDATA[<h1 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h1><p>　　编程珠玑是一本很有影响力的书籍。它是作者对自己在长期的计算机程序设计实践中积累下来的宝贵经验的总结。行文生动形象，可读性高。在美国，它被作为低年级数据结构与算法的教材，同时，也作为高年级的算法辅助教材。它涵盖了算法课程和数据结构课程的大部分内容。不同于其他教材，他不强调单纯的从数学上分析，而是强调结合实际问题进行分析、应用和实现。话不多说，开卷有益。</p>
+<h1 id="二、概述"><a href="#二、概述" class="headerlink" title="二、概述"></a>二、概述</h1><p>　　这是第二次翻开本书。虽然被很多人推荐，但阅读一遍后，我并没有抓到什么重点。这次边读边记录，希望能够做到讲本书融会贯通。</p>
+<h2 id="准确的问题描述"><a href="#准确的问题描述" class="headerlink" title="准确的问题描述"></a>准确的问题描述</h2><p>　　在程序员的日常工作中，更多的工作更像是通过程序解决问题的过程。所以更好的描述问题，或者说是自己能够对需求更准确的转化成为问题，会对后续的程序设计帮助十足。将复杂的问题简单化，模块化。同时，能否准确的描述问题，也决定这你是否将要解决一个“正确”的问题。<br>　　一般情况下，对问题的描述可以概括为三个方面:</p>
+<blockquote>
+<p>准确的输入　　</p>
+<p>准确的输出　　</p>
+<p>准确的约束条件
+　　</p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;编程珠玑，悟性太低，择日再来一遍。&lt;/p&gt;
-
+      &lt;h1 id=&quot;一、绪论&quot;&gt;&lt;a href=&quot;#一、绪论&quot; class=&quot;headerlink&quot; title=&quot;一、绪论&quot;&gt;&lt;/a&gt;一、绪论&lt;/h1&gt;&lt;p&gt;　　编程珠玑是一本很有影响力的书籍。它是作者对自己在长期的计算机程序设计实践中积累下来的宝贵经验的总结。行文生动形象，可读性
     
     </summary>
     
