@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://lennybai.cn/2016/12/06/编程珠玑/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
 <meta property="og:description" content="一、绪论　　编程珠玑是一本很有影响力的书籍。它是作者对自己在长期的计算机程序设计实践中积累下来的宝贵经验的总结。行文生动形象，可读性高。在美国，它被作为低年级数据结构与算法的教材，同时，也作为高年级的算法辅助教材。它涵盖了算法课程和数据结构课程的大部分内容。不同于其他教材，他不强调单纯的从数学上分析，而是强调结合实际问题进行分析、应用和实现。话不多说，开卷有益。">
-<meta property="og:updated_time" content="2016-12-22T07:53:31.289Z">
+<meta property="og:updated_time" content="2016-12-22T09:30:03.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程珠玑">
 <meta name="twitter:description" content="一、绪论　　编程珠玑是一本很有影响力的书籍。它是作者对自己在长期的计算机程序设计实践中积累下来的宝贵经验的总结。行文生动形象，可读性高。在美国，它被作为低年级数据结构与算法的教材，同时，也作为高年级的算法辅助教材。它涵盖了算法课程和数据结构课程的大部分内容。不同于其他教材，他不强调单纯的从数学上分析，而是强调结合实际问题进行分析、应用和实现。话不多说，开卷有益。">
@@ -380,7 +380,7 @@
 
       
         <h1 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h1><p>　　编程珠玑是一本很有影响力的书籍。它是作者对自己在长期的计算机程序设计实践中积累下来的宝贵经验的总结。行文生动形象，可读性高。在美国，它被作为低年级数据结构与算法的教材，同时，也作为高年级的算法辅助教材。它涵盖了算法课程和数据结构课程的大部分内容。不同于其他教材，他不强调单纯的从数学上分析，而是强调结合实际问题进行分析、应用和实现。话不多说，开卷有益。<br><a id="more"></a></p>
-<h1 id="二、概述"><a href="#二、概述" class="headerlink" title="二、概述"></a>二、概述</h1><p>　　这是第二次翻开本书。虽然被很多人推荐，但阅读一遍后，我并没有抓到什么重点。这次边读边记录，希望能够做到讲本书融会贯通。</p>
+<h1 id="二、概述"><a href="#二、概述" class="headerlink" title="二、概述"></a>二、概述</h1><p>　　这是第二次翻开本书。虽然被很多人推荐，但阅读一遍后，我并没有抓到什么重点。这次边读边记录，希望能够做到讲本书融会贯通。主要是记录为主，可能每一段都没有核心，也可能上下文没有逻辑性，强迫症或者性情暴躁者，慎读。</p>
 <h3 id="准确的问题描述"><a href="#准确的问题描述" class="headerlink" title="准确的问题描述"></a>准确的问题描述</h3><p>　　在程序员的日常工作中，更多的工作更像是通过程序解决问题的过程。所以更好的描述问题，或者说是自己能够对需求更准确的转化成为问题，会对后续的程序设计帮助十足。将复杂的问题简单化，模块化。同时，能否准确的描述问题，也决定这你是否将要解决一个“正确”的问题。<br>　　一般情况下，对问题的描述可以概括为三个方面:</p>
 <blockquote>
 <p>准确的输入　　</p>
@@ -397,6 +397,13 @@
 </ol>
 <h3 id="编写正确的程序"><a href="#编写正确的程序" class="headerlink" title="编写正确的程序"></a>编写正确的程序</h3><p>　　必须引起注意的是，编程技巧仅仅是编写正确程序的很小一部分，大部分内容还是：问题定义、算法设计和数据结构的选择。遵循这几点的话，编写正常的程序通常是很容易的。除此之外，要记得使用测试用例和断言等去验证程序的正确性。</p>
 <h3 id="让编写的程序真正可用"><a href="#让编写的程序真正可用" class="headerlink" title="让编写的程序真正可用"></a>让编写的程序真正可用</h3><p>　　程序员都是乐观主义者，他们总是认为讲编写完的程序，插入系统中就可以正常运行。在大部分时间是可行的，但是有的时候确实灾难性的存在，我们不得不需要在庞大的系统中，去寻找这个错误的小小的程序。<br>　　良好的使用断言，可以知道程序的开发，同事也可以用来判断程序的正确性。这里作者提到了一个对于断言使用的一个小嘲讽：在测试时使用断言，而产品发布时将断言关闭的程序员，就好比在岸上操练时穿着救生衣，而下海时将救生衣脱下的水手。<br>　　为了程序的可用性，往往自动测试和时间计数也显得至关重要。具有完整且完善边界测试用例能够保证程序的准确性，而且可以提高测试效率。同时，时间计数可以直观的观察程序的运行时间复杂度。</p>
+<h3 id="来聊聊性能"><a href="#来聊聊性能" class="headerlink" title="来聊聊性能"></a>来聊聊性能</h3><p>　　一个简单而又功能强大的程序，往往令用户欣喜而不令开发者烦恼，这是程序的终极目标。而其中一个重要的元素就是效率。低效率的程序往往令用户沮丧。等待的时间越长，也就意味着越高的概率会失去用户。而如何提高效率我们往往考虑以下途径：</p>
+<ol>
+<li>通过积累经验，选择恰当的方法</li>
+<li>粗略估算运行时间</li>
+<li>算法设计</li>
+<li>代码调优</li>
+</ol>
 
       
     </div>
@@ -625,7 +632,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、绪论"><span class="nav-number">1.</span> <span class="nav-text">一、绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、概述"><span class="nav-number">2.</span> <span class="nav-text">二、概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准确的问题描述"><span class="nav-number">2.0.1.</span> <span class="nav-text">准确的问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法，灵机一动"><span class="nav-number">2.0.2.</span> <span class="nav-text">算法，灵机一动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据决定数据结构"><span class="nav-number">2.0.3.</span> <span class="nav-text">数据决定数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写正确的程序"><span class="nav-number">2.0.4.</span> <span class="nav-text">编写正确的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让编写的程序真正可用"><span class="nav-number">2.0.5.</span> <span class="nav-text">让编写的程序真正可用</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、绪论"><span class="nav-number">1.</span> <span class="nav-text">一、绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、概述"><span class="nav-number">2.</span> <span class="nav-text">二、概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准确的问题描述"><span class="nav-number">2.0.1.</span> <span class="nav-text">准确的问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法，灵机一动"><span class="nav-number">2.0.2.</span> <span class="nav-text">算法，灵机一动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据决定数据结构"><span class="nav-number">2.0.3.</span> <span class="nav-text">数据决定数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写正确的程序"><span class="nav-number">2.0.4.</span> <span class="nav-text">编写正确的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让编写的程序真正可用"><span class="nav-number">2.0.5.</span> <span class="nav-text">让编写的程序真正可用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#来聊聊性能"><span class="nav-number">2.0.6.</span> <span class="nav-text">来聊聊性能</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
