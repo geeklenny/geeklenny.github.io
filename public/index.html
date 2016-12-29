@@ -303,6 +303,125 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/28/Third-Party-Applications-of-WineHQ/" itemprop="url">
+                  Third Party Applications of WineHQ 
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T10:05:18+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+
+          
+
+          
+
+          
+          
+             <span id="/2016/12/28/Third-Party-Applications-of-WineHQ/" class="leancloud_visitors" data-flag-title="Third Party Applications of WineHQ ">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">热度 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。</p>
+<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將 Windows API 调用翻译成为动态的 POSIX 调用，免除了性能和其他一些行为的内存占用，让你能够干净地集合 Windows 应用到你的桌面。[1]</p>
+<p>　　Wine 项目由 Bob Amstadt 于 1993 年发起，旨在寻求一种在 Linux 上运行 Windows 3.1 程序的办法。不久之后，Alexandre Julliard 开始接手领导 Wine 的开发，从此由他管理这个项目。 多年以来，随着 Windows API 和应用为了适应新硬件及软件而不断演变，Wine 也一直不断发展来支持新的特性，移植到更多其他系统，并且更加稳定，提供着更好的用户体验。[1]</p>
+<p>　　为了让WINE变得更强大并且更容易被使用，有很多第三方的应用对它进行支持和扩展，本文主要对官网列举出来的部分第三方应用进行简略说明。</p>
+<h1 id="二、Wine第三方应用"><a href="#二、Wine第三方应用" class="headerlink" title="二、Wine第三方应用"></a>二、Wine第三方应用</h1><p>　　在wine的官网列举出两大类三方软件:仍在维护的和不再更新的。在仍在维护的三方软件中，我们最耳熟能详的当然就是crossover。不过我们关注的重点是除它之外的软件，看能否发现一些独特的特性。</p>
+<h2 id="gnome-exe-thumbnailer"><a href="#gnome-exe-thumbnailer" class="headerlink" title="gnome-exe-thumbnailer"></a>gnome-exe-thumbnailer</h2><p>　　在ubuntu软件包中我们可以找到这个软件。同样可以通过apt-get gnome-exe-thumbnailer来进行安装。这个三方应用主要的作用是将windows的exe按照原有的图标进行显示。详细的说，比如我们常用的qq图标是一个小企鹅。而ubuntu默认会将exe识别为同一种类型文件而显示默认的类型图标。安装这个三方应用后，它会提取原有的window图标加以显示。更多可以查看<a href="https://www.youtube.com/watch?v=9YXhNNCSwv8" target="_blank" rel="external">这个视频</a>.</p>
+<h2 id="q4wine"><a href="#q4wine" class="headerlink" title="q4wine"></a>q4wine</h2><p>　　q4wine是一个用来安装和管理wine程序的kde工具。我们可以用q4wine去安装程序。同样可以去管理wine安装的应用程序。更多效果可以查看<a href="https://www.youtube.com/watch?v=951nVQQJhks&amp;t=244s" target="_blank" rel="external">这个视频</a>.</p>
+<h2 id="Winetricks"><a href="#Winetricks" class="headerlink" title="Winetricks"></a>Winetricks</h2><p>　　winetricksWinetricks is a helper script to download and install various redistributable runtime libraries needed to run some programs in Wine. These may include replacements for components of Wine using closed source libraries.<br>　　winetricks整体上看起来更像是一个包依赖管理器。通过运行winetricks脚本，为wine应用提供相应的动态库支持。更多效果可以查看<a href="https://www.youtube.com/watch?v=tqrVR1QjDPQ" target="_blank" rel="external">这个视频</a>.</p>
+<h1 id="三、其他"><a href="#三、其他" class="headerlink" title="三、其他"></a>三、其他</h1><p>　　这些三方库都可以在github或者google code上找到相应的源码，如果想要深入了解，可以进行源码阅读。<br>　　令人遗憾的是，这些三方库的参考文档并不丰富，所以想要了解，还是需要看看别人的使用视频或者亲身感受一下。</p>
+<p>　　</p>
+<hr>
+<h1 id="3-参考文献"><a href="#3-参考文献" class="headerlink" title="3 参考文献"></a>3 参考文献</h1><ul>
+<li>[1]: <a href="http://www.oschina.net/p/wine/?fromerr=eLEvCq6E" target="_blank" rel="external">wine中文社区</a></li>
+<li>[2]: <a href="https://wiki.winehq.org/Third_Party_Applications" target="_blank" rel="external">WINEHQ</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+	<div>
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/21/leetcode-ReverseInteger/" itemprop="url">
                   leetcode-ReverseInteger
                 </a>
@@ -1505,150 +1624,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/09/leetcode-twosum/" itemprop="url">
-                  leetcode-two sum
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-09T15:56:03+08:00" content="2016-12-09">
-              2016-12-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/程序设计/" itemprop="url" rel="index">
-                    <span itemprop="name">程序设计</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/程序设计/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-          
-          
-             <span id="/2016/12/09/leetcode-twosum/" class="leancloud_visitors" data-flag-title="leetcode-two sum">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">热度 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="twoSum"><a href="#twoSum" class="headerlink" title="twoSum"></a><a href="https://leetcode.com/problems/two-sum/">twoSum</a></h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/09/leetcode-twosum/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-	<div>
-	  
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1689,7 +1669,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
