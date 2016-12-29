@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="程序设计,leetcode," />
+  <meta name="keywords" content="c++,linux,hexo,socket,unp,aupe" />
 
 
 
@@ -94,16 +94,15 @@
 
 
 
-<meta name="description" content="LongestPalidrmicSubstringGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-LongestPalindromicSubstring">
-<meta property="og:url" content="http://lennybai.cn/2016/12/20/leetcode-LongestPalindromicSubstring/index.html">
+<meta name="description" content="lennybai,个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lennybai' Blog">
+<meta property="og:url" content="http://lennybai.cn/archives/2016/page/3/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="LongestPalidrmicSubstringGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
-<meta property="og:updated_time" content="2016-12-20T06:36:53.265Z">
+<meta property="og:description" content="lennybai,个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode-LongestPalindromicSubstring">
-<meta name="twitter:description" content="LongestPalidrmicSubstringGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="twitter:title" content="Lennybai' Blog">
+<meta name="twitter:description" content="lennybai,个人博客">
 
 
 
@@ -124,10 +123,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/2016/12/20/leetcode-LongestPalindromicSubstring/"/>
+  <link rel="canonical" href="http://lennybai.cn/archives/2016/page/3/"/>
 
 
-  <title> leetcode-LongestPalindromicSubstring | Lennybai' Blog </title>
+  <title> 归档 | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -158,7 +157,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -280,181 +279,70 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 21 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
+      
+      
+      
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        </div>
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/11/14/了解c-11/" itemprop="url">
               
-                leetcode-LongestPalindromicSubstring
+                <span itemprop="name">了解c++11</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-20T14:30:01+08:00" content="2016-12-20">
-              2016-12-20
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-11-14T14:48:10+08:00"
+              content="2016-11-14" >
+          11-14
+        </time>
+      </div>
 
-          
-
-          
-
-          
-
-          
-          
-             <span id="/2016/12/20/leetcode-LongestPalindromicSubstring/" class="leancloud_visitors" data-flag-title="leetcode-LongestPalindromicSubstring">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">热度 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="LongestPalidrmicSubstring"><a href="#LongestPalidrmicSubstring" class="headerlink" title="LongestPalidrmicSubstring"></a><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank" rel="external">LongestPalidrmicSubstring</a></h3><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br><a id="more"></a></p>
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
-<p>Input: “babad”</p>
-<p>Output: “bab”</p>
-<p>Note: “aba” is also a valid answer.</p>
-<p>Input: “cbbd”</p>
-<p>Output: “bb”</p>
-</blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　这个题我的答案并不巧妙，只能说是完成了任务。不过还是要说一下注意点:</p>
-<ol>
-<li>对连续的相同字符的处理</li>
-<li>如果a[p..q]是palidrmic串，如果a[p-1]=a[q+1]，那么a[p-1..q+1]也是palidrmic串</li>
-</ol>
-<p>　　在leetcode的discuss专栏里有很多出色的解答，希望大家移步讨论区去自行学习。</p>
-<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">GetInitSbutString</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> n, <span class="keyword">int</span> &amp;start, <span class="keyword">int</span>&amp; end)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">while</span>(start - <span class="number">1</span> &gt;= <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( s.at(start - <span class="number">1</span> ) == s.at(n) )</div><div class="line">                start = start <span class="number">-1</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span>(end + <span class="number">1</span> &lt; s.length())</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( s.at(end+<span class="number">1</span>) == s.at(n) )</div><div class="line">                end = end+<span class="number">1</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getSubstring</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span>&amp; start)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> tempStart = start, tempEnd = start;</div><div class="line"></div><div class="line">        GetInitSbutString(s, start, tempStart, tempEnd);</div><div class="line">        <span class="keyword">while</span>( (tempStart - <span class="number">1</span> &gt;= <span class="number">0</span> ) &amp;&amp; (tempEnd + <span class="number">1</span> &lt; s.length() ) )</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( s.at(tempStart<span class="number">-1</span>) == s.at(tempEnd+<span class="number">1</span>))</div><div class="line">            &#123;</div><div class="line">                tempStart = tempStart - <span class="number">1</span>;</div><div class="line">                tempEnd = tempEnd + <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        start = tempStart;</div><div class="line">        <span class="keyword">return</span> tempEnd-tempStart +<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">0</span>,length=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>; i &lt; s.length(); i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> tempStart = i;</div><div class="line">            <span class="keyword">int</span> l = getSubstring(s,tempStart);</div><div class="line">            <span class="keyword">if</span> (length &lt;= l)</div><div class="line">            &#123;</div><div class="line">                length = l;</div><div class="line">                start = tempStart;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> s.substr(start, length);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    Solution s;</div><div class="line">    <span class="built_in">string</span> temp = <span class="string">"babad"</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.longestPalindrome(temp) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    temp = <span class="string">"cbbd"</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.longestPalindrome(temp) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    temp = <span class="string">"aba"</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.longestPalindrome(temp) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div></div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lenny Bai WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.jpg" alt="Lenny Bai Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-	<div>
-	  
-	    
-<div style="text-align:center;color: #ccc;font-size:14px;">
------- 本文结束 ------</div>
-
-
-	  
-	</div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/程序设计/" rel="tag">#程序设计</a>
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/12/19/leetcode-MedianOfTwoSortedArrays/" rel="next" title="leetcode-MedianOfTwoSortedArrays">
-                <i class="fa fa-chevron-left"></i> leetcode-MedianOfTwoSortedArrays
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/20/c-11条件变量/" rel="prev" title="c++11条件变量">
-                c++11条件变量 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2016/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2016/">1</a><a class="page-number" href="/archives/2016/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
 
 
           </div>
@@ -481,17 +369,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -585,17 +464,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LongestPalidrmicSubstring"><span class="nav-number">1.</span> <span class="nav-text">LongestPalidrmicSubstring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coding"><span class="nav-number">4.</span> <span class="nav-text">coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -696,9 +564,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   

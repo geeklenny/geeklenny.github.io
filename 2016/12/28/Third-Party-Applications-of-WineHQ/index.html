@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="程序设计,leetcode," />
+  <meta name="keywords" content="c++,linux,hexo,socket,unp,aupe" />
 
 
 
@@ -94,16 +94,19 @@
 
 
 
-<meta name="description" content="LongestPalidrmicSubstringGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="description" content="序　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。
+一、概述　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-LongestPalindromicSubstring">
-<meta property="og:url" content="http://lennybai.cn/2016/12/20/leetcode-LongestPalindromicSubstring/index.html">
+<meta property="og:title" content="Third Party Applications of WineHQ ">
+<meta property="og:url" content="http://lennybai.cn/2016/12/28/Third-Party-Applications-of-WineHQ/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="LongestPalidrmicSubstringGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
-<meta property="og:updated_time" content="2016-12-20T06:36:53.265Z">
+<meta property="og:description" content="序　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。
+一、概述　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將">
+<meta property="og:updated_time" content="2016-12-29T03:17:50.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode-LongestPalindromicSubstring">
-<meta name="twitter:description" content="LongestPalidrmicSubstringGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="twitter:title" content="Third Party Applications of WineHQ ">
+<meta name="twitter:description" content="序　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。
+一、概述　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將">
 
 
 
@@ -124,10 +127,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/2016/12/20/leetcode-LongestPalindromicSubstring/"/>
+  <link rel="canonical" href="http://lennybai.cn/2016/12/28/Third-Party-Applications-of-WineHQ/"/>
 
 
-  <title> leetcode-LongestPalindromicSubstring | Lennybai' Blog </title>
+  <title> Third Party Applications of WineHQ  | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +304,7 @@
             
             
               
-                leetcode-LongestPalindromicSubstring
+                Third Party Applications of WineHQ 
               
             
           </h1>
@@ -313,8 +316,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-20T14:30:01+08:00" content="2016-12-20">
-              2016-12-20
+            <time itemprop="dateCreated" datetime="2016-12-28T10:05:18+08:00" content="2016-12-28">
+              2016-12-28
             </time>
           </span>
 
@@ -326,7 +329,7 @@
 
           
           
-             <span id="/2016/12/20/leetcode-LongestPalindromicSubstring/" class="leancloud_visitors" data-flag-title="leetcode-LongestPalindromicSubstring">
+             <span id="/2016/12/28/Third-Party-Applications-of-WineHQ/" class="leancloud_visitors" data-flag-title="Third Party Applications of WineHQ ">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -348,22 +351,21 @@
       
 
       
-        <h3 id="LongestPalidrmicSubstring"><a href="#LongestPalidrmicSubstring" class="headerlink" title="LongestPalidrmicSubstring"></a><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank" rel="external">LongestPalidrmicSubstring</a></h3><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br><a id="more"></a></p>
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><blockquote>
-<p>Input: “babad”</p>
-<p>Output: “bab”</p>
-<p>Note: “aba” is also a valid answer.</p>
-<p>Input: “cbbd”</p>
-<p>Output: “bb”</p>
-</blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　这个题我的答案并不巧妙，只能说是完成了任务。不过还是要说一下注意点:</p>
-<ol>
-<li>对连续的相同字符的处理</li>
-<li>如果a[p..q]是palidrmic串，如果a[p-1]=a[q+1]，那么a[p-1..q+1]也是palidrmic串</li>
-</ol>
-<p>　　在leetcode的discuss专栏里有很多出色的解答，希望大家移步讨论区去自行学习。</p>
-<h3 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">GetInitSbutString</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> n, <span class="keyword">int</span> &amp;start, <span class="keyword">int</span>&amp; end)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">while</span>(start - <span class="number">1</span> &gt;= <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( s.at(start - <span class="number">1</span> ) == s.at(n) )</div><div class="line">                start = start <span class="number">-1</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span>(end + <span class="number">1</span> &lt; s.length())</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( s.at(end+<span class="number">1</span>) == s.at(n) )</div><div class="line">                end = end+<span class="number">1</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getSubstring</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span>&amp; start)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> tempStart = start, tempEnd = start;</div><div class="line"></div><div class="line">        GetInitSbutString(s, start, tempStart, tempEnd);</div><div class="line">        <span class="keyword">while</span>( (tempStart - <span class="number">1</span> &gt;= <span class="number">0</span> ) &amp;&amp; (tempEnd + <span class="number">1</span> &lt; s.length() ) )</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( s.at(tempStart<span class="number">-1</span>) == s.at(tempEnd+<span class="number">1</span>))</div><div class="line">            &#123;</div><div class="line">                tempStart = tempStart - <span class="number">1</span>;</div><div class="line">                tempEnd = tempEnd + <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        start = tempStart;</div><div class="line">        <span class="keyword">return</span> tempEnd-tempStart +<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">0</span>,length=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>; i &lt; s.length(); i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> tempStart = i;</div><div class="line">            <span class="keyword">int</span> l = getSubstring(s,tempStart);</div><div class="line">            <span class="keyword">if</span> (length &lt;= l)</div><div class="line">            &#123;</div><div class="line">                length = l;</div><div class="line">                start = tempStart;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> s.substr(start, length);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    Solution s;</div><div class="line">    <span class="built_in">string</span> temp = <span class="string">"babad"</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.longestPalindrome(temp) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    temp = <span class="string">"cbbd"</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.longestPalindrome(temp) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    temp = <span class="string">"aba"</span>;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; s.longestPalindrome(temp) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://github.com/geeklenny/leetcode" target="_blank" rel="external">github代码链接</a></p>
+        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。</p>
+<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將 Windows API 调用翻译成为动态的 POSIX 调用，免除了性能和其他一些行为的内存占用，让你能够干净地集合 Windows 应用到你的桌面。[1]</p>
+<p>　　Wine 项目由 Bob Amstadt 于 1993 年发起，旨在寻求一种在 Linux 上运行 Windows 3.1 程序的办法。不久之后，Alexandre Julliard 开始接手领导 Wine 的开发，从此由他管理这个项目。 多年以来，随着 Windows API 和应用为了适应新硬件及软件而不断演变，Wine 也一直不断发展来支持新的特性，移植到更多其他系统，并且更加稳定，提供着更好的用户体验。[1]</p>
+<p>　　为了让WINE变得更强大并且更容易被使用，有很多第三方的应用对它进行支持和扩展，本文主要对官网列举出来的部分第三方应用进行简略说明。</p>
+<h1 id="二、Wine第三方应用"><a href="#二、Wine第三方应用" class="headerlink" title="二、Wine第三方应用"></a>二、Wine第三方应用</h1><p>　　在wine的官网列举出两大类三方软件:仍在维护的和不再更新的。在仍在维护的三方软件中，我们最耳熟能详的当然就是crossover。不过我们关注的重点是除它之外的软件，看能否发现一些独特的特性。</p>
+<h2 id="gnome-exe-thumbnailer"><a href="#gnome-exe-thumbnailer" class="headerlink" title="gnome-exe-thumbnailer"></a>gnome-exe-thumbnailer</h2><p>　　在ubuntu软件包中我们可以找到这个软件。同样可以通过apt-get gnome-exe-thumbnailer来进行安装。这个三方应用主要的作用是将windows的exe按照原有的图标进行显示。详细的说，比如我们常用的qq图标是一个小企鹅。而ubuntu默认会将exe识别为同一种类型文件而显示默认的类型图标。安装这个三方应用后，它会提取原有的window图标加以显示。更多可以查看<a href="https://www.youtube.com/watch?v=9YXhNNCSwv8" target="_blank" rel="external">这个视频</a>.</p>
+<h2 id="q4wine"><a href="#q4wine" class="headerlink" title="q4wine"></a>q4wine</h2><p>　　q4wine是一个用来安装和管理wine程序的kde工具。我们可以用q4wine去安装程序。同样可以去管理wine安装的应用程序。更多效果可以查看<a href="https://www.youtube.com/watch?v=951nVQQJhks&amp;t=244s" target="_blank" rel="external">这个视频</a>.</p>
+<h2 id="Winetricks"><a href="#Winetricks" class="headerlink" title="Winetricks"></a>Winetricks</h2><p>　　winetricksWinetricks is a helper script to download and install various redistributable runtime libraries needed to run some programs in Wine. These may include replacements for components of Wine using closed source libraries.<br>　　winetricks整体上看起来更像是一个包依赖管理器。通过运行winetricks脚本，为wine应用提供相应的动态库支持。更多效果可以查看<a href="https://www.youtube.com/watch?v=tqrVR1QjDPQ" target="_blank" rel="external">这个视频</a>.</p>
+<h1 id="三、其他"><a href="#三、其他" class="headerlink" title="三、其他"></a>三、其他</h1><p>　　这些三方库都可以在github或者google code上找到相应的源码，如果想要深入了解，可以进行源码阅读。<br>　　令人遗憾的是，这些三方库的参考文档并不丰富，所以想要了解，还是需要看看别人的使用视频或者亲身感受一下。</p>
+<p>　　</p>
+<hr>
+<h1 id="3-参考文献"><a href="#3-参考文献" class="headerlink" title="3 参考文献"></a>3 参考文献</h1><ul>
+<li>[1]: <a href="http://www.oschina.net/p/wine/?fromerr=eLEvCq6E" target="_blank" rel="external">wine中文社区</a></li>
+<li>[2]: <a href="https://wiki.winehq.org/Third_Party_Applications" target="_blank" rel="external">WINEHQ</a></li>
+</ul>
 
       
     </div>
@@ -415,30 +417,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/程序设计/" rel="tag">#程序设计</a>
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/19/leetcode-MedianOfTwoSortedArrays/" rel="next" title="leetcode-MedianOfTwoSortedArrays">
-                <i class="fa fa-chevron-left"></i> leetcode-MedianOfTwoSortedArrays
+              <a href="/2016/12/21/leetcode-ReverseInteger/" rel="next" title="leetcode-ReverseInteger">
+                <i class="fa fa-chevron-left"></i> leetcode-ReverseInteger
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/20/c-11条件变量/" rel="prev" title="c++11条件变量">
-                c++11条件变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,7 +582,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LongestPalidrmicSubstring"><span class="nav-number">1.</span> <span class="nav-text">LongestPalidrmicSubstring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coding"><span class="nav-number">4.</span> <span class="nav-text">coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概述"><span class="nav-number">2.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Wine第三方应用"><span class="nav-number">3.</span> <span class="nav-text">二、Wine第三方应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gnome-exe-thumbnailer"><span class="nav-number">3.1.</span> <span class="nav-text">gnome-exe-thumbnailer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q4wine"><span class="nav-number">3.2.</span> <span class="nav-text">q4wine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Winetricks"><span class="nav-number">3.3.</span> <span class="nav-text">Winetricks</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、其他"><span class="nav-number">4.</span> <span class="nav-text">三、其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-参考文献"><span class="nav-number">5.</span> <span class="nav-text">3 参考文献</span></a></li></ol></div>
             
           </div>
         </section>
