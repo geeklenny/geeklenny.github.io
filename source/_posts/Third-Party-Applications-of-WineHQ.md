@@ -12,6 +12,8 @@ categories:
 # 一、概述
 　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將 Windows API 调用翻译成为动态的 POSIX 调用，免除了性能和其他一些行为的内存占用，让你能够干净地集合 Windows 应用到你的桌面。[1]
 
+<!--more-->
+
 　　Wine 项目由 Bob Amstadt 于 1993 年发起，旨在寻求一种在 Linux 上运行 Windows 3.1 程序的办法。不久之后，Alexandre Julliard 开始接手领导 Wine 的开发，从此由他管理这个项目。 多年以来，随着 Windows API 和应用为了适应新硬件及软件而不断演变，Wine 也一直不断发展来支持新的特性，移植到更多其他系统，并且更加稳定，提供着更好的用户体验。[1]
 
 　　为了让WINE变得更强大并且更容易被使用，有很多第三方的应用对它进行支持和扩展，本文主要对官网列举出来的部分第三方应用进行简略说明。

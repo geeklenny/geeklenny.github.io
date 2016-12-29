@@ -8,6 +8,7 @@
       <url>http://lennybai.cn/2016/12/28/Third-Party-Applications-of-WineHQ/</url>
       <content type="html"><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。</p>
 <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>　　Wine （“Wine Is Not an Emulator” 的首字母缩写）是一个能够在多种 POSIX-compliant 操作系统（诸如 Linux，Mac OSX 及 BSD 等）上运行 Windows 应用的兼容层。 Wine 不是像虚拟机或者模拟器一样模仿内部的 Windows 逻辑，而是將 Windows API 调用翻译成为动态的 POSIX 调用，免除了性能和其他一些行为的内存占用，让你能够干净地集合 Windows 应用到你的桌面。[1]</p>
+<a id="more"></a>
 <p>　　Wine 项目由 Bob Amstadt 于 1993 年发起，旨在寻求一种在 Linux 上运行 Windows 3.1 程序的办法。不久之后，Alexandre Julliard 开始接手领导 Wine 的开发，从此由他管理这个项目。 多年以来，随着 Windows API 和应用为了适应新硬件及软件而不断演变，Wine 也一直不断发展来支持新的特性，移植到更多其他系统，并且更加稳定，提供着更好的用户体验。[1]</p>
 <p>　　为了让WINE变得更强大并且更容易被使用，有很多第三方的应用对它进行支持和扩展，本文主要对官网列举出来的部分第三方应用进行简略说明。</p>
 <h1 id="二、Wine第三方应用"><a href="#二、Wine第三方应用" class="headerlink" title="二、Wine第三方应用"></a>二、Wine第三方应用</h1><p>　　在wine的官网列举出两大类三方软件:仍在维护的和不再更新的。在仍在维护的三方软件中，我们最耳熟能详的当然就是crossover。不过我们关注的重点是除它之外的软件，看能否发现一些独特的特性。</p>
