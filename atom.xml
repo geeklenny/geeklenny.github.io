@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lennybai.cn/"/>
-  <updated>2016-12-29T07:15:05.813Z</updated>
+  <updated>2017-01-03T06:05:00.438Z</updated>
   <id>http://lennybai.cn/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>effective stl</title>
+    <link href="http://lennybai.cn/2016/12/30/effective-stl/"/>
+    <id>http://lennybai.cn/2016/12/30/effective-stl/</id>
+    <published>2016-12-30T03:59:27.000Z</published>
+    <updated>2017-01-03T06:05:00.438Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。<br><a id="more"></a></p>
+<p>术语</p>
+<p>标准序列容器：　vector string deque list<br>标准关联容器：　set multiset map multimap</p>
+<p>remove   算法描述：查找的得到第一个元素的位置，然后从此位置开始遍历容器，将后面的元素依次前移，跳过和value相同值的元素，也就是说，所有和value相同值的元素都会被覆盖，而其他的元素都会依次前移。最后remove返回”指向最后一个   ‘有用’   元素的iterator”,但是在remove算法过程中，并没有修改原容器的size,以及end()。但是从逻辑角度看，最后的[   从remove得到的iterator_result,   容器的结尾end()   )   这个区间里面的元素已经没有意义了。所以这些元素不应该属于该容器了。remove算法能做的仅此而已，并没有删除这些无用的元素。<br> 结论：移除容器里面的元素不应该使用remove算法，而是容器自己的方法erase()。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;序&quot;&gt;&lt;a href=&quot;#序&quot; class=&quot;headerlink&quot; title=&quot;序&quot;&gt;&lt;/a&gt;序&lt;/h1&gt;&lt;p&gt;　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="effective stl" scheme="http://lennybai.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/effective-stl/"/>
+    
+    
+      <category term="读书笔记" scheme="http://lennybai.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="effective stl" scheme="http://lennybai.cn/tags/effective-stl/"/>
+    
+  </entry>
   
   <entry>
     <title>Third Party Applications of WineHQ </title>
@@ -961,36 +991,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>linux 小技巧</title>
-    <link href="http://lennybai.cn/2016/11/22/linux-%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    <id>http://lennybai.cn/2016/11/22/linux-小技巧/</id>
-    <published>2016-11-22T01:27:34.000Z</published>
-    <updated>2016-11-22T09:51:22.241Z</updated>
-    
-    <content type="html"><![CDATA[<p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
-<p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
-<p>　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name mysql 2&gt;/dev/null</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##　命令行对错误信息的处理&lt;br&gt;　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ogelzbmrh.bkt.clouddn.com/findmysql.png&quot; alt=&quot;fin
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://lennybai.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="使用技巧" scheme="http://lennybai.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="linux" scheme="http://lennybai.cn/tags/linux/"/>
-    
-      <category term="系统相关" scheme="http://lennybai.cn/tags/%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   

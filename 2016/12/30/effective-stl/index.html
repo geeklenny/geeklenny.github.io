@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,linux,hexo,socket,unp,aupe" />
+  <meta name="keywords" content="读书笔记,effective stl," />
 
 
 
@@ -94,15 +94,16 @@
 
 
 
-<meta name="description" content="lennybai,个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lennybai' Blog">
-<meta property="og:url" content="http://lennybai.cn/archives/2016/index.html">
+<meta name="description" content="序　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="effective stl">
+<meta property="og:url" content="http://lennybai.cn/2016/12/30/effective-stl/index.html">
 <meta property="og:site_name" content="Lennybai' Blog">
-<meta property="og:description" content="lennybai,个人博客">
+<meta property="og:description" content="序　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。">
+<meta property="og:updated_time" content="2017-01-03T06:05:00.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lennybai' Blog">
-<meta name="twitter:description" content="lennybai,个人博客">
+<meta name="twitter:title" content="effective stl">
+<meta name="twitter:description" content="序　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。">
 
 
 
@@ -123,10 +124,10 @@
 
 
 
-  <link rel="canonical" href="http://lennybai.cn/archives/2016/"/>
+  <link rel="canonical" href="http://lennybai.cn/2016/12/30/effective-stl/"/>
 
 
-  <title> 归档 | Lennybai' Blog </title>
+  <title> effective stl | Lennybai' Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -279,403 +280,196 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 22 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                effective stl
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-30T11:59:27+08:00" content="2016-12-30">
+              2016-12-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/读书笔记/effective-stl/" itemprop="url" rel="index">
+                    <span itemprop="name">effective stl</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+             <span id="/2016/12/30/effective-stl/" class="leancloud_visitors" data-flag-title="effective stl">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">热度 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。<br><a id="more"></a></p>
+<p>术语</p>
+<p>标准序列容器：　vector string deque list<br>标准关联容器：　set multiset map multimap</p>
+<p>remove   算法描述：查找的得到第一个元素的位置，然后从此位置开始遍历容器，将后面的元素依次前移，跳过和value相同值的元素，也就是说，所有和value相同值的元素都会被覆盖，而其他的元素都会依次前移。最后remove返回”指向最后一个   ‘有用’   元素的iterator”,但是在remove算法过程中，并没有修改原容器的size,以及end()。但是从逻辑角度看，最后的[   从remove得到的iterator_result,   容器的结尾end()   )   这个区间里面的元素已经没有意义了。所以这些元素不应该属于该容器了。remove算法能做的仅此而已，并没有删除这些无用的元素。<br> 结论：移除容器里面的元素不应该使用remove算法，而是容器自己的方法erase()。</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lenny Bai WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Lenny Bai Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+	<div>
+	  
+	    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/30/effective-stl/" itemprop="url">
-              
-                <span itemprop="name">effective stl</span>
-              
-            </a>
-        
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-30T11:59:27+08:00"
-              content="2016-12-30" >
-          12-30
-        </time>
-      </div>
+	  
+	</div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+            <a href="/tags/effective-stl/" rel="tag">#effective stl</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/28/Third-Party-Applications-of-WineHQ/" rel="next" title="Third Party Applications of WineHQ ">
+                <i class="fa fa-chevron-left"></i> Third Party Applications of WineHQ 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/28/Third-Party-Applications-of-WineHQ/" itemprop="url">
-              
-                <span itemprop="name">Third Party Applications of WineHQ </span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-28T10:05:18+08:00"
-              content="2016-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/21/leetcode-ReverseInteger/" itemprop="url">
-              
-                <span itemprop="name">leetcode-ReverseInteger</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-21T15:13:37+08:00"
-              content="2016-12-21" >
-          12-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/20/c-11条件变量/" itemprop="url">
-              
-                <span itemprop="name">c++11条件变量</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-20T16:11:20+08:00"
-              content="2016-12-20" >
-          12-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/20/leetcode-LongestPalindromicSubstring/" itemprop="url">
-              
-                <span itemprop="name">leetcode-LongestPalindromicSubstring</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-20T14:30:01+08:00"
-              content="2016-12-20" >
-          12-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/19/leetcode-MedianOfTwoSortedArrays/" itemprop="url">
-              
-                <span itemprop="name">leetcode-MedianOfTwoSortedArrays</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-19T11:04:34+08:00"
-              content="2016-12-19" >
-          12-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/15/ActiveMQ使用记录/" itemprop="url">
-              
-                <span itemprop="name">ActiveMQ使用记录</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-15T13:14:16+08:00"
-              content="2016-12-15" >
-          12-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/13/leetcode-longestSubStringWithOutRepeatingCharacters/" itemprop="url">
-              
-                <span itemprop="name">leetcode-longestSubStringWithOutRepeatingCharacters</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-13T15:20:24+08:00"
-              content="2016-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/13/算法导论-动态规划/" itemprop="url">
-              
-                <span itemprop="name">算法导论-动态规划</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-13T10:24:22+08:00"
-              content="2016-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/12/leetcode-AddTwoNum/" itemprop="url">
-              
-                <span itemprop="name">leetcode-AddTwoNum</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-12T17:18:20+08:00"
-              content="2016-12-12" >
-          12-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="page-number" href="/archives/2016/page/3/">3</a><a class="extend next" rel="next" href="/archives/2016/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -702,8 +496,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -797,6 +600,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -897,11 +711,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
 
 
   

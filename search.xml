@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[effective stl]]></title>
+      <url>http://lennybai.cn/2016/12/30/effective-stl/</url>
+      <content type="html"><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　使用c++不可避免的要去使用和钻研stl。effective stl是教我们如何有效(更安全，更具有运行效率)的去使用stl的书，让我们成为更高产的程序员。<br><a id="more"></a></p>
+<p>术语</p>
+<p>标准序列容器：　vector string deque list<br>标准关联容器：　set multiset map multimap</p>
+<p>remove   算法描述：查找的得到第一个元素的位置，然后从此位置开始遍历容器，将后面的元素依次前移，跳过和value相同值的元素，也就是说，所有和value相同值的元素都会被覆盖，而其他的元素都会依次前移。最后remove返回”指向最后一个   ‘有用’   元素的iterator”,但是在remove算法过程中，并没有修改原容器的size,以及end()。但是从逻辑角度看，最后的[   从remove得到的iterator_result,   容器的结尾end()   )   这个区间里面的元素已经没有意义了。所以这些元素不应该属于该容器了。remove算法能做的仅此而已，并没有删除这些无用的元素。<br> 结论：移除容器里面的元素不应该使用remove算法，而是容器自己的方法erase()。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Third Party Applications of WineHQ ]]></title>
       <url>http://lennybai.cn/2016/12/28/Third-Party-Applications-of-WineHQ/</url>
       <content type="html"><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>　　工作需要，简单调研一下WineHQ相关的内容。主要是摘要记录，不做更多思考。</p>
@@ -567,7 +577,10 @@
       <content type="html"><![CDATA[<p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
 <p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
 <p>　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name mysql 2&gt;/dev/null</div></pre></td></tr></table></figure></p>
-]]></content>
+<h2 id="64bit下编译32bit程序"><a href="#64bit下编译32bit程序" class="headerlink" title="64bit下编译32bit程序"></a>64bit下编译32bit程序</h2><pre><code>遇到问题就要尝试解决。关注这一点，是我打算在我的开发环境ubuntu64下编译和调试wine时遇到的。通过搜索资料和实践，发现chroot可以有效的解决这个问题。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install dchroot debootstrap</div></pre></td></tr></table></figure>
+<pre><code>更多内容请自行查阅
+</code></pre>]]></content>
     </entry>
     
     <entry>

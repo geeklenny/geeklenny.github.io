@@ -105,7 +105,7 @@
 
 　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:1find / -name mysql 2&amp;gt;">
 <meta property="og:image" content="http://ogelzbmrh.bkt.clouddn.com/findmysql.png">
-<meta property="og:updated_time" content="2016-11-22T09:51:22.241Z">
+<meta property="og:updated_time" content="2017-01-23T07:38:26.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux 小技巧">
 <meta name="twitter:description" content="##　命令行对错误信息的处理　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:
@@ -390,7 +390,10 @@
         <p>##　命令行对错误信息的处理<br>　　在使用控制台的时候，往往在得到正确结果的同时，也会跟随者一些并不重要的错误信息，比如:</p>
 <p><img src="http://ogelzbmrh.bkt.clouddn.com/findmysql.png" alt="find mysql"></p>
 <p>　　我们发现，当我们使用find命令去搜索mysql相关的内容的时候，除了我们想要的路径信息外，还有很多不必要的”permission denied”错误信息。这时候我们就可以通过将错误重定向到/dev/null来解决这个问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name mysql 2&gt;/dev/null</div></pre></td></tr></table></figure></p>
-
+<h2 id="64bit下编译32bit程序"><a href="#64bit下编译32bit程序" class="headerlink" title="64bit下编译32bit程序"></a>64bit下编译32bit程序</h2><pre><code>遇到问题就要尝试解决。关注这一点，是我打算在我的开发环境ubuntu64下编译和调试wine时遇到的。通过搜索资料和实践，发现chroot可以有效的解决这个问题。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install dchroot debootstrap</div></pre></td></tr></table></figure>
+<pre><code>更多内容请自行查阅
+</code></pre>
       
     </div>
 
@@ -528,7 +531,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -536,7 +539,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -545,7 +548,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -618,7 +621,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#64bit下编译32bit程序"><span class="nav-number">1.</span> <span class="nav-text">64bit下编译32bit程序</span></a></li></ol></div>
             
           </div>
         </section>
@@ -636,8 +639,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
